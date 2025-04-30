@@ -1,0 +1,55 @@
+<div class="navbar">
+  <div class="navbar__gray">
+    <div class="navbar__gray__left">
+      <p class="navbar__gray__text">Engleski</p>
+      <p class="navbar__gray__text">Crnogorski</p>
+      <p class="navbar__gray__text">Svakog dana od 08:00 do 21:00 h, osim nedeljom Tel: +382 20 656 772</p>
+    </div>
+    <div class="navbar__gray__right">
+      <p class="navbar__gray__text">On-line Podrska</p>
+      <p class="navbar__gray__text">Registracija</p>
+      <p class="navbar__gray__text">Prijava</p>
+    </div>
+  </div>
+
+  <header class="navbar__header">
+    <div class="navbar__header__container">
+      <div class="navbar__header__left">
+        <div class="navbar__header__left__logo">
+          <span class="navbar__header__left__text">CENTRO</span><span class="navbar__header__left__text">METAL</span>
+        </div>
+      </div>
+      <div class="navbar__header__right">
+        <div class="navbar__header__right__search">
+          <input class="navbar__header__right__input" type="text" placeholder="Unesi šifru ili pojam pretraživanja">
+          <i class="fa-solid fa-magnifying-glass navbar__header__right__search__magnify"></i>
+        </div>
+        <div class="navbar__header__right__buy">
+          <a class="navbar__header__right__link" href="#"><i class="fa-brands fa-facebook-f navbar__header__right__buy__icon"></i></a>
+          <a class="navbar__header__right__link navbar__header__right__buy__basket" href="#" >MOJA KORPA</a>
+          <p class="navbar__header__right__text">0.00$</p>
+          <a class="navbar__header__right__link" href="#" style="background-color:#0BA2D6;"><i class="fa-solid fa-cart-shopping navbar__header__right__icon"></i></a>
+          <div class="navbar__burger-menu" (click)="toggleMenu()">
+            <i class="fa-solid fa-bars navbar__burger-menu__icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="navbar__small">
+    <div class="navbar__trapezoid-left"></div>
+    <div class="navbar__small__select" id="select-menu" [ngClass]="{'navbar__small__select--active': isMenuActive}">
+      <a class="navbar__small__select__button" *ngFor="let item of navbarItems" >
+        <i *ngIf="item.icon" [class]="item.icon + ' navbar__small__select__icon'"></i>
+        {{ item.label }}
+      </a>
+      <a class="navbar__small__select__button" href="#">
+        <p class="navbar__small__select__text">Informacije</p>
+        <p class="navbar__header__right__text">tel: 020 123 456</p>
+      </a>
+    </div>
+    <div class="navbar__trapezoid-right"></div>
+
+  </div>
+</div>

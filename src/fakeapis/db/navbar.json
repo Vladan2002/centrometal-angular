@@ -1,0 +1,88 @@
+
+{
+
+  "guest": [
+    {
+      "id": 1,
+      "label": "",
+      "path": "/home",
+      "icon": "fa-solid fa-house"
+    },
+    {
+      "id": 2,
+      "label": "Akcija",
+      "path": "/akcija"
+    },
+    {
+      "id": 3,
+      "label": "Rasprodaja",
+      "path": "/rasprodaja"
+    },
+    {
+      "id": 4,
+      "label": "Katalozi",
+      "path": "/katalozi"
+    },
+    {
+      "id": 5,
+      "label": "Novosti",
+      "path": "/novosti"
+    },
+    {
+      "id": 6,
+      "label": "O nama",
+      "path": "/o-nama"
+    },
+    {
+      "id": 7,
+      "label": "Uradi sam",
+      "path": "/uradi-sam"
+    },
+    {
+      "id": 8,
+      "label": "Vip kartica",
+      "path": "/vip-kartica"
+    },
+    {
+      "id": 9,
+      "label": "Kontakt",
+      "path": "/kontakt"
+    }
+  ],
+  "user": [
+    {
+      "label": "Home",
+      "route": "/home"
+    },
+    {
+      "label": "Profile",
+      "route": "/profile"
+    },
+    {
+      "label": "Orders",
+      "route": "/orders"
+    },
+    {
+      "label": "Logout",
+      "route": "/logout"
+    }
+  ],
+  "admin": [
+    {
+      "label": "Home",
+      "route": "/home"
+    },
+    {
+      "label": "Dashboard",
+      "route": "/dashboard"
+    },
+    {
+      "label": "Manage Users",
+      "route": "/manage-users"
+    },
+    {
+      "label": "Logout",
+      "route": "/logout"
+    }
+  ]
+}
