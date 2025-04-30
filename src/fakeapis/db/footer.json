@@ -1,0 +1,54 @@
+{
+  "container": {
+    "footer": [
+      {
+        "title": "Informacije",
+        "items": [
+          "O nama",
+          "Gdje kupiti",
+          "Zaposljenje",
+          "Aktivnosti"
+        ]
+      },
+      {
+        "title": "Aktivnosti",
+        "items": [
+          "Akcije",
+          "Noviteti",
+          "Rasprodaja",
+          "Marketing"
+        ]
+      },
+      {
+        "title": "Moja strana",
+        "items": [
+          "Registracija",
+          "Prijava",
+          "Korisnička strana",
+          "Korpa"
+        ]
+      },
+      {
+        "title": "Plaćanje i dostava",
+        "items": [
+          "Načini plaćanja",
+          "Sigurnost plaćanja",
+          "Brza i pouzdana dostava",
+          "Odaberite datum dostave"
+        ]
+      },
+      {
+        "title": "Povrat i zamjena",
+        "items": [
+          "Servis",
+          "Reklamacije"
+        ]
+      }
+    ],
+    "copyright": {
+      "text": "© 2016 Copyright by centrometal.me All rights reserved",
+      "link": "centrometal.me",
+      "href": ""
+    }
+  }
+}
