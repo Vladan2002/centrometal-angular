@@ -1,1 +1,14 @@
-<p>footer works!</p>
+<div class="bottom-container" *ngIf="footerData.container.footer.length > 0">
+  <div class="bottom-container__footer">
+    <div class="bottom-container__footer__content" *ngFor="let section of footerData.container.footer">
+      <h5 class="bottom-container__footer__title">{{ section.title }}</h5>
+      <p class="bottom-container__footer__text" *ngFor="let item of section.items">{{ item }}</p>
+    </div>
+  </div>
+  <div class="bottom-container__copyright">
+    <p class="bottom-container__copyright__text">
+      {{ footerData.container.copyright.text }}
+      <a [href]="footerData.container.copyright.href">{{ footerData.container.copyright.link }}</a>
+    </p>
+  </div>
+</div>
