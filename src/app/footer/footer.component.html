@@ -1,4 +1,4 @@
-<div class="bottom-container" *ngIf="footerData.container.footer.length > 0">
+<div class="bottom-container" *ngIf="footerData?.container?.footer?.length">
   <div class="bottom-container__footer">
     <div class="bottom-container__footer__content" *ngFor="let section of footerData.container.footer">
       <h5 class="bottom-container__footer__title">{{ section.title }}</h5>

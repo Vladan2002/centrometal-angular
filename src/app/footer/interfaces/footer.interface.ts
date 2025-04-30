@@ -6,10 +6,11 @@ export interface FooterSection {
 export interface FooterContainer {
   container: {
     footer: FooterSection[];
-    copyright: {
-      text: string;
-      link: string;
-      href: string;
-    };
+    copyright: Copyright;
   };
+}
+ export interface Copyright {
+  text: string;
+  link: string;
+  href: string;
 }
