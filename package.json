@@ -6,10 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "start:api:navbar": "json-server --watch src/fakeapis/db/navbar.json --port 3001",
-    "start:api:accordion": "json-server --watch src/fakeapis/db/accordion.json --port 3002",
-    "start:all-apis": "concurrently \"npm run start:api:navbar\" \"npm run start:api:accordion\""
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +17,7 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
