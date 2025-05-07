@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { FooterContainer } from '../app/footer/interfaces/footer.interface';
+import { Footer } from '../app/footer/interfaces/footer.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class FooterService {
 
   constructor(private http: HttpClient) {}
 
-  getFooterData(): Observable<FooterContainer> {
-    return this.http.get<FooterContainer>(this.apiUrl).pipe(
+  getFooterData(): Observable<Footer> {
+    return this.http.get<Footer>(this.apiUrl).pipe(
       catchError(this.handleError)
     );
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FooterService } from '../../services/footer.service';
-import { FooterContainer, FooterSection, Copyright } from './interfaces/footer.interface';
+import { Footer, FooterSection, Copyright } from './interfaces/footer.interface';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -10,11 +10,9 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  footerData: FooterContainer = {
-    container: {
+  footerData: Footer = {
       footer: [],
       copyright: { text: '', link: '', href: '' }
-    }
   };
 
   constructor(private footerService: FooterService) {}
@@ -25,7 +23,7 @@ export class FooterComponent implements OnInit {
 
   fetchFooterData(): void {
     this.footerService.getFooterData().pipe(
-      map((data) => this.mapFooterDataToInterfaces(data))
+      map((data) => this.mapFooterData(data))
     ).subscribe({
       next: (mappedData) => {
         this.footerData = mappedData;
@@ -37,18 +35,17 @@ export class FooterComponent implements OnInit {
     });
   }
 
-  private mapFooterDataToInterfaces(data: any): FooterContainer {
+  private mapFooterData(data: any): Footer {
     if (!data || !data.container) {
       console.warn('Invalid footer data format:', data);
       return {
-        container: {
           footer: [],
           copyright: { text: '', link: '', href: '' }
-        }
+
       };
     }
 
-    const footerSections: FooterSection[] = data.container.footer?.map((section: any) => ({
+    const footerSections: FooterSection[] = data.container?.footer?.map((section: any) => ({
       title: section.title,
       items: section.items || []
     })) || [];
@@ -60,10 +57,10 @@ export class FooterComponent implements OnInit {
     };
 
     return {
-      container: {
+
         footer: footerSections,
         copyright
-      }
+
     };
   }
 

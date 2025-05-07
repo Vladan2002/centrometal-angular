@@ -3,11 +3,9 @@ export interface FooterSection {
   items: string[];
 }
 
-export interface FooterContainer {
-  container: {
+export interface Footer {
     footer: FooterSection[];
     copyright: Copyright;
-  };
 }
  export interface Copyright {
   text: string;
