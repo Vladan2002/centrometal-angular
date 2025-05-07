@@ -1,11 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BrandsliderService } from '../../services/brand-slider.service';
 
 @Component({
   selector: 'app-brand-slider',
-  imports: [],
+  standalone: false,
   templateUrl: './brand-slider.component.html',
-  styleUrl: './brand-slider.component.scss'
+  styleUrls: ['./brand-slider.component.scss']
 })
-export class BrandSliderComponent {
+export class BrandSliderComponent implements OnInit {
+  brandImages: any;
 
+  constructor(private brandService: BrandsliderService) {}
+
+  ngOnInit(): void {
+    this.brandService.getBrands().subscribe({
+      next: (data) => {
+        this.brandImages = data;
+        this.brandImages= this.brandImages.brands;
+        console.log(this.brandImages);
+      },
+      error: (err) => console.error('Error loading brand images:', err)
+    });
+  }
 }

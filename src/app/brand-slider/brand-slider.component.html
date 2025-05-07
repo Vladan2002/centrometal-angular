@@ -1,1 +1,9 @@
-<p>brand-slider works!</p>
+<div class="slider-brand">
+  <div class="slider-brand__box"></div>
+  <button class="slider-brand__controls slider-brand__controls--left"> < </button>
+  <div class="slider-brand__container" id="slider22-container">
+    <img *ngFor="let brand of brandImages" class="slider-brand__img" [src]="brand" alt="Brand">
+  </div>
+  <div class="slider-brand__box"></div>
+  <button class="slider-brand__controls slider-brand__controls--right" > > </button>
+</div>
