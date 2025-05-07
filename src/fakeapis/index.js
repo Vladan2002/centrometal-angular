@@ -5,5 +5,5 @@ const footer = require('./db/footer.json');
 module.exports = () => ({
   navbar: navbar,
   accordion: accordion,
-  footer:footer
+  footer: footer
 });

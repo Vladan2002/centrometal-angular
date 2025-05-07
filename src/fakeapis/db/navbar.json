@@ -1,6 +1,6 @@
-{
 
-  "guest": [
+{
+  "navbar": [
     {
       "id": 1,
       "label": "",
@@ -46,42 +46,6 @@
       "id": 9,
       "label": "Kontakt",
       "path": "/kontakt"
-    }
-  ],
-  "user": [
-    {
-      "label": "Home",
-      "route": "/home"
-    },
-    {
-      "label": "Profile",
-      "route": "/profile"
-    },
-    {
-      "label": "Orders",
-      "route": "/orders"
-    },
-    {
-      "label": "Logout",
-      "route": "/logout"
-    }
-  ],
-  "admin": [
-    {
-      "label": "Home",
-      "route": "/home"
-    },
-    {
-      "label": "Dashboard",
-      "route": "/dashboard"
-    },
-    {
-      "label": "Manage Users",
-      "route": "/manage-users"
-    },
-    {
-      "label": "Logout",
-      "route": "/logout"
     }
   ]
 }
