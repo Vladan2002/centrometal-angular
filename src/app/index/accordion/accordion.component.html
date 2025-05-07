@@ -1,0 +1,20 @@
+<div class="container__side__menu" id="menu">
+  <button class="container__side__menu__button">
+    <img class="container__side__menu__button__img" src="assets/grid.png" alt="">
+    <p class="container__side__menu__text container__side__menu__text__case">Kupuj po kategoriji</p>
+  </button>
+
+  <ng-container *ngFor="let item of accordion">
+    <button class="container__side__menu__button" >
+      <p class="container__side__menu__text">{{ item.category.name }}</p>
+      <p class="container__side__menu__text" *ngIf="item.category.subcategory?.length">+</p>
+    </button>
+
+    <button
+      *ngFor="let sub of item.category.subcategory"
+      class="container__side__menu__button container__side__menu__button--subcategory "
+      >
+      <p class="container__side__menu__text">{{sub}}</p>
+    </button>
+  </ng-container>
+</div>

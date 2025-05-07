@@ -1,4 +1,8 @@
 .container {
+  width: 74%;
+  display: flex;
+  justify-content: center;
+  margin: 0 13% 0 13%;
   &__side {
     width: 25%;
     display: flex;
