@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarService } from '../services/navbar.service';
+import {IndexModule} from './index/index.model';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,11 @@ import { NavbarService } from '../services/navbar.service';
   ],
   imports: [
     BrowserModule,
-    NavbarModule,  
-    HttpClientModule
+    NavbarModule,
+    HttpClientModule,
+    IndexModule
   ],
-  providers: [NavbarService], 
+  providers: [NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
