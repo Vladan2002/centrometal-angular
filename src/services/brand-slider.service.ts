@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
-export interface BrandImage {
-  src: string;
-}
+import { Observable, map } from 'rxjs';
+import { BrandImage } from '../app/brand-slider/interfaces/brand.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +12,8 @@ export class BrandsliderService {
   constructor(private http: HttpClient) {}
 
   getBrands(): Observable<BrandImage[]> {
-    return this.http.get<BrandImage[]>(`${this.apiUrl}`);
+    return this.http.get<{ brands: string[] }>(this.apiUrl).pipe(
+      map(response => response.brands.map(path => ({ src: path })))
+    );
   }
-
-
 }
