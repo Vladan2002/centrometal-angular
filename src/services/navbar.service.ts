@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {Section} from '../app/navbar/interfaces/navbar.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +11,8 @@ export class NavbarService {
 
   constructor(private http: HttpClient) {}
 
-  getNavbarData(role: string): Observable<any[]> {
-    return this.http.get<any>(this.apiUrl).pipe(
-      map((data) => {
-        return data[role] || data['guest'];
-      })
-    );
+  getNavbarData(): Observable<{ navbar: Section[] }> {
+    return this.http.get<{ navbar: Section[] }>(this.apiUrl);
   }
+
 }

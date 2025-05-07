@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NavbarService } from '../../services/navbar.service';
+import {Section} from './interfaces/navbar.interface';
 
 @Component({
   selector: 'app-navbar',
@@ -9,18 +10,18 @@ import { NavbarService } from '../../services/navbar.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  navbarItems: any[] = [];
-  userRole: string = 'guest';
-  isMenuActive: boolean = false; // Tracks menu state
+  navbarItems: Section[] | undefined;
+  isMenuActive: boolean = false;
 
   constructor(private navbarService: NavbarService) {}
 
   ngOnInit(): void {
-    const storedRole = localStorage.getItem('userRole') || 'guest';
-    this.userRole = storedRole;
-
-    this.navbarService.getNavbarData(this.userRole).subscribe(data => {
-      this.navbarItems = data;
+    this.fetchData()
+  }
+  fetchData(): void {
+    this.navbarService.getNavbarData().subscribe(data => {
+      this.navbarItems = data.navbar;
+      console.log(this.navbarItems);
     });
   }
 
