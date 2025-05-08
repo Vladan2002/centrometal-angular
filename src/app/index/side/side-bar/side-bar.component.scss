@@ -1,0 +1,128 @@
+.container{
+  &__side{
+
+    &__ad{
+      width: 100%;
+      position: relative;
+      display: inline-block;
+
+      &__text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-99%, 30%);
+        color: white;
+        font-size: 3rem;
+        white-space: nowrap;
+        font-weight: bold;
+        &:first-of-type{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          white-space: nowrap;
+          font-style: italic;
+        }
+      }
+      &__img{
+        width: 100%;
+        height: auto;
+      }
+
+    }
+
+
+    &__button-blue{
+      width:50%;
+      height: 30px;
+      border: none;
+      background-color: #00A9EA;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 0 10px;
+      min-width: 70px;
+      word-wrap: break-word;
+      cursor: pointer;
+
+      max-width: 200px;
+
+      &:hover{
+        transform:scale(1.05);
+      }
+    }
+
+
+    &__search-brand{
+      width: 80%;
+      padding: 15px 10%;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: white;
+      background-color: #005474;
+      &__input{
+        width: 100%;
+        border: none;
+        height: 30px;
+        margin-top: 10px;
+      }
+      &__magnify{
+        margin-left: -30px;
+        color: #0BA2D6;
+      }
+    }
+
+
+    &__newsletter{
+      width: 90%;
+      padding: 15px 5%;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: white !important;
+      background-color: #005474;
+
+
+
+      &__input{
+        width: 100%;
+        border: none;
+        margin-bottom: 10px;
+        background-color: transparent;
+        border-bottom: 2px solid #00A9EA;
+        padding: 10px 0 ;
+        color: white !important;
+        &::placeholder{
+          color: white;
+        }
+      }
+    }
+    &__makita-post{
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      &__img {
+        width: 200px;
+        height: 200px;
+      }
+
+      &__title {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
+      &__img-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+    }
+
+  }
+}
