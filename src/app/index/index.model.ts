@@ -1,7 +1,7 @@
 import{IndexComponent} from './index.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {SideModel} from './side/side.model';
+import {SideModel} from './components/side/side.model';
 
 @NgModule({
   declarations: [IndexComponent],
