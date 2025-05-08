@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AccordionService} from '../../../services/accordion.service';
+import {AccordionService} from '../../../../services/accordion.service';
 import {Accordion} from './interfaces/accordion.interface';
 
 @Component({
