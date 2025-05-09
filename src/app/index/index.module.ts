@@ -1,11 +1,11 @@
 import{IndexComponent} from './index.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {SideModel} from './side/side.model';
+import {SideModule} from './side/side.module';
 
 @NgModule({
   declarations: [IndexComponent],
-  imports: [CommonModule, SideModel],
+  imports: [CommonModule, SideModule],
   exports: [IndexComponent]
 
 })

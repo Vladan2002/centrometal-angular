@@ -1,6 +1,6 @@
 import {SideComponent} from './side.component';
 import{NgModule} from '@angular/core';
-import {SideBarModule} from './side-bar/side-bar.modul';
+import {SideBarModule} from './side-bar/side-bar.module';
 
 @NgModule({
   imports: [
@@ -9,4 +9,4 @@ import {SideBarModule} from './side-bar/side-bar.modul';
   declarations: [SideComponent],
   exports: [SideComponent]
 })
-export class SideModel {}
+export class SideModule {}
