@@ -16,8 +16,8 @@ export class AccordionService {
   constructor(private http: HttpClient) {}
 
   getAccordionData(): Observable<Accordion[]> {
-    return this.http.get<{ accordion: Accordion[] }>(this.apiUrl).pipe(
-      map(response => response.accordion)
+    return this.http.get<Accordion[]>(this.apiUrl).pipe(
+      map(response => response)
     );
   }
 }

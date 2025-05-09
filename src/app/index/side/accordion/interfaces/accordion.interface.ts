@@ -1,7 +1,9 @@
 
 export interface Accordion {
-  category: {
-    name: string;
-    subcategory: string[];
-  };
+  category:Category;
+}
+
+interface Category {
+  name: string;
+  subcategory: string[];
 }

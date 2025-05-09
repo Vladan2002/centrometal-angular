@@ -10,12 +10,12 @@
       [ngClass]="{'container__side__menu__button--deactivate-button': !isActive}"
       (click)="toggleSubcategories(item.category.name)">
       <p class="container__side__menu__text">{{ item.category.name }}</p>
-      <p class="container__side__menu__text" *ngIf="item.category.subcategory?.length">
+      <p class="container__side__menu__text" *ngIf="item?.category?.subcategory?.length">
        +
       </p>
     </button>
     <button
-      *ngFor="let sub of item.category.subcategory"
+      *ngFor="let sub of item?.category?.subcategory"
       class="container__side__menu__button container__side__menu__button--subcategory"
       [ngClass]="{'container__side__menu__button--deactivate-button': !expandedCategories[item.category.name] || !isActive}"
 
