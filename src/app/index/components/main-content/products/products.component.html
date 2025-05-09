@@ -1,0 +1,19 @@
+<div *ngIf="loading">Učitavanje...</div>
+
+<div *ngFor="let section of sections" >
+  <div class="container__products__shape">
+  <div class="container__products__shape__trapez container__products__shape__trapez--{{section.color}}">
+    <p class="container__products__shape__text">
+      <i class="{{section.icon}}"></i>{{section.name}}
+    </p>
+  </div>
+  </div>
+
+
+  <div class="cards">
+    <app-card
+      *ngFor="let card of section.cards"
+      [product]="card"
+    ></app-card>
+  </div>
+</div>

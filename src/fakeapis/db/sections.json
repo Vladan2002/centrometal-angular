@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Electronics",
+    "color": "#1E90FF",
+    "icon": "devices",
+    "param": 1,
+    "cards": []
+  },
+  {
+    "name": "Books",
+    "color": "#FF6347",
+    "icon": "book",
+    "param": 2,
+    "cards": []
+  }
+]
