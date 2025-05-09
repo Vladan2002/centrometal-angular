@@ -1,10 +1,8 @@
 import {SideComponent} from './side.component';
 import{NgModule} from '@angular/core';
-import {AccordionModule} from './accordion/accordion.modul';
 
 @NgModule({
   imports: [
-    AccordionModule
   ],
   declarations: [SideComponent],
   exports: [SideComponent]
