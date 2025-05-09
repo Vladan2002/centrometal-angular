@@ -1,1 +1,40 @@
-<p>main-slider works!</p>
+<div class="container__products__slider">
+  <div class="container__products__slider__show">
+    <div
+      *ngFor="let slide of slides.pictures; let i = index"
+      class="container__products__slider__show__slides">
+      <img
+        class="container__products__slider__show__img"
+        [src]="slide"
+      />
+    </div>
+
+    <button
+      class="container__products__slider__show__controls container__products__slider__show__controls--previous"
+      aria-label="Previous slide"
+    >
+      &lt;
+    </button>
+    <button
+      class="container__products__slider__show__controls container__products__slider__show__controls--next"
+      aria-label="Next slide"
+    >
+      &gt;
+    </button>
+
+    <div class="container__products__slider__pager">
+      <span
+        *ngFor="let slide of slides; let i = index"
+        class="container__products__slider__pager__dot"
+        [attr.aria-label]="'Go to slide ' + (i + 1)"
+      ></span>
+    </div>
+  </div>
+
+  <div class="progress-container">
+    <div
+      class="progress"
+    ></div>
+    <div class="progress-bg"></div>
+  </div>
+</div>

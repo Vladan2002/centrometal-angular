@@ -1,11 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MainSliderService } from '../../../../../services/main-slider.service';
 
 @Component({
   selector: 'app-main-slider',
-  imports: [],
+  standalone:false,
   templateUrl: './main-slider.component.html',
-  styleUrl: './main-slider.component.scss'
+  styleUrls: ['./main-slider.component.scss']
 })
-export class MainSliderComponent {
+export class MainSliderComponent implements OnInit {
+  slides: any;
 
+  constructor(private service: MainSliderService) {}
+
+  ngOnInit(): void {
+    this.loadSlides();
+  }
+
+  private loadSlides(): void {
+    this.service.getImages().subscribe({
+      next: (slides) => {
+        this.slides = slides;
+        console.log(this.slides);
+      },
+      error: (error) => {
+        console.error('Error loading slides:', error);
+      }
+    });
+  }
 }
