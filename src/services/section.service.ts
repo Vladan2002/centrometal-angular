@@ -2,29 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable, forkJoin, of} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import {Section,Picture,Product} from '../app/index/components/main-content/products/interfaces/products.interface';
 
-export interface Section {
-  name: string;
-  param: number;
-  color: string;
-  icon: string;
-  cards: Product[];
-  loaded: boolean;
-}
-
-export interface Product {
-  id: number;
-  name: string;
-  discount: number;
-  subcategory_id:number;
-  price: number;
-  picture: Picture;
-}
-
-export interface Picture {
-  product_id: number;
-  url: string;
-}
 
 @Injectable({
   providedIn: 'root'
