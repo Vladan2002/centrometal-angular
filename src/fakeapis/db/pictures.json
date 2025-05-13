@@ -1,14 +1,90 @@
 [
   {
-    "productId": 101,
-    "url": "./assets/frizider.png"
+    "product_id": 1,
+    "url": "https://grmec.me/keshirano/proizvodi/tmb_400_400_88xjb9vqd7k0ccg.png"
   },
   {
-    "productId": 102,
-    "url": "./assets/frizider.png"
+    "product_id": 1,
+    "url": "https://www.inelektronik.rs/wf-proizvodi/24327/2.jpg"
   },
   {
-    "productId": 201,
-    "url": "./assets/frizider.png"
+    "product_id": 1,
+    "url": "https://www.tehnomax.me/UserFiles/products/2024/001/large/21506.webp"
+  },
+  {
+    "product_id": 2,
+    "url": "https://www.voxelectronics.com/files/images/2023/6/9/HeatWrap.jpg"
+  },
+  {
+    "product_id": 2,
+    "url": "https://cdn.tiramisuerp.com/s3.tehnoplus.me/971028_3774936.jpg"
+  },
+  {
+    "product_id": 2,
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHUcWRtzwmHuS6co0TesGWmDu_AuGmFsMHCw&s"
+  },
+  {
+    "product_id": 1,
+    "url": "https://media3.bsh-group.com/Product_Shots/5120x/19559502_PUE645BB5D_STP_def.webp"
+  },
+  {
+    "product_id": 1,
+    "url": "https://gasiks.rs/wp-content/uploads/2021/08/indukciona-ploca-FS-721.jpg"
+  },
+  {
+    "product_id": 4,
+    "url": "https://cdn.tiramisuerp.com/s3.tehnoplus.me/887756_3593809.jpg"
+  },
+  {
+    "product_id": 4,
+    "url": "https://tehnolux.me/wp-content/uploads/2022/04/ASPIRATOR-ARIELLI-ACH-300S.jpg"
+  },
+  {
+    "product_id": 4,
+    "url": "https://media3.bsh-group.com/Product_Shots/5120x/MCSA00920722_551145_DHU645U_PGA1_def.webp"
+  },
+  {
+    "product_id": 5,
+    "url": "https://gor.hgecdn.net/medias/MB-PIMG-0C1E720AB6E3E5BAD8450A1BFFB4F27E-MABAGOR-1200Wx1200H?context=bWFzdGVyfG1hYmFnb3Jwcm9kdWN0aW1hZ2VzfDExNTEwMTF8aW1hZ2UvcG5nfGFEQmpMMmczTXk4NU1qUXpPRFk0TVRZNE1qSXlMMDFDWDFCSlRVZGZNRU14UlRjeU1FRkNOa1V6UlRWQ1FVUTRORFV3UVRGQ1JrWkNORVl5TjBWZlRVRkNRVWRQVWkweE1qQXdWM2d4TWpBd1NBfGY4ZjMxMDE2ZWZhZWQ4NjNhNTc5ZTczOGE4ZWNhNTUzZDMzZDAwMzAxNzExZjYzY2Y5ZmExNDNjMjViMTBmZDU"
+  },
+  {
+    "product_id": 5,
+    "url": "https://cdn.tiramisuerp.com/s3.tehnoplus.me/963911_3868765.jpg"
+  },
+  {
+    "product_id": 6,
+    "url": "https://www.market.me.metalac.com/UserFiles/products/details/metalac-ekspres-lonac-7l_3.jpg"
+  },
+  {
+    "product_id": 6,
+    "url": "https://www.market.metalac.com/UserFiles/products/details/metalac-ekspres-lonac-na-klik-22cm7l_2.jpg"
+  },
+  {
+    "product_id": 6,
+    "url": "https://cdn.tiramisuerp.com/s3.tehnoplus.me/1059626_3761626.jpg"
+  },
+  {
+    "product_id": 6,
+    "url": "https://www.tefal.co.rs/medias/?context=bWFzdGVyfGltYWdlc3w3MDE4NHxpbWFnZS9qcGVnfGFXMWhaMlZ6TDJnMll5OW9PV0V2TWpZMk9UazNOelkzTlRNMk9UUXxjYmI3ZTQ3YjkzZTcwN2JkYTg5Mjk3NWQzNjk2YmY3YjI4OTE2Mzc4OTZiM2Q5ZGE3MTgyMGI4YTc0YmVhYmYw"
+  },
+  {
+    "product_id": 7,
+    "url": "https://www.dualit.com/cdn/shop/files/Blender-Chrome-Lifestyle-1.jpg?v=1685022361"
+  },
+  {
+    "product_id": 7,
+    "url": "https://westinghousesmallappliances.com.au/cdn/shop/files/Westinghouse_Blender_800W_Turn_Dial_Control_1.8L_Glass_Jug_-_-_-885087.jpg?v=1738216920"
+  },
+  {
+    "product_id": 7,
+    "url": "https://m.media-amazon.com/images/I/81k9HSazQ3L.jpg"
+  },
+  {
+    "product_id": 7,
+    "url": "https://www.vitapur.me/media/catalog/product/2/2/22194_23_rosmarino_blender_nutrimax_pro_grey_web.jpg"
+  },
+  {
+    "product_id": 7,
+    "url": "https://www.cnet.com/a/img/resize/63f281d1fc4aabccc520b46df58a31c209a92b59/hub/2017/05/10/6dd6d29e-422f-4d71-8793-9bfc1e1ce758/kitchenaidblender-1.jpg?auto=webp&fit=crop&height=1200&width=1200"
   }
 ]

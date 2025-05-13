@@ -8,5 +8,5 @@ import{Product} from '../../../../../../services/section.service';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input() product!: Product & { imageUrl: string };
+  @Input() product!: Product;
 }
