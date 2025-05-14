@@ -14,13 +14,17 @@ export class ProductsComponent implements OnInit {
   constructor(private sectionsService: SectionsService) {}
 
   ngOnInit() {
-    this.sectionsService.getSections().subscribe(sections => {
-      this.sections = sections;
-      setTimeout(() => {
-        this.loadCardsSequentially(0);
-      }, 5000);
-    });
+   this.loadContent()
   }
+
+  private loadContent():void {
+  this.sectionsService.getSections().subscribe(sections => {
+  this.sections = sections;
+  setTimeout(() => {
+  this.loadCardsSequentially(0);
+}, 5000);
+});
+}
 
   private loadCardsSequentially(index: number) {
     if (index >= this.sections.length) return;

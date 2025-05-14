@@ -1,6 +1,6 @@
 <div *ngFor="let section of sections">
   <div class="container__products__shape">
-    <div class="container__products__shape__trapez container__products__shape__trapez--{{ section?.color || 'default' }}">
+    <div class="container__products__shape__trapezoid container__products__shape__trapezoid--{{ section?.color || 'default' }}">
       <p class="container__products__shape__text">
         <i class="{{ section?.icon}}"></i>{{ section?.name }}
       </p>
@@ -12,12 +12,13 @@
 
       <ng-container *ngIf="!section?.cards?.length && !section?.loaded">
         <div class="skeleton-loader" *ngFor="let i of [1, 2, 3, 4]">
-          <div class="container__products__bar__card skeleton-card">
-            <div class="skeleton skeleton-img"></div>
-            <div class="skeleton skeleton-badge"></div>
-            <div class="skeleton skeleton-name"></div>
-            <div class="skeleton skeleton-timer"></div>
-            <div class="skeleton skeleton-price"></div>
+          <div class="skeleton__card">
+            <div class="skeleton skeleton--img"></div>
+            <div class="skeleton skeleton--badge"></div>
+            <div class="skeleton skeleton--name"></div>
+            <div class="skeleton skeleton--timer"></div>
+            <div class="skeleton skeleton--price"></div>
+            <div class="skeleton skeleton--price"></div>
           </div>
         </div>
       </ng-container>

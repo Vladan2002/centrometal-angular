@@ -1,7 +1,7 @@
 [
-  { "color": "dark", "name": "Vruća ponuda", "icon": "fa-solid fa-fire", "param": 0, "cards": []},
-  { "color": "", "name": "AKCIJA - POPUSTI", "icon": "fa-solid fa-tag fa-rotate-90", "param": 1, "cards": []},
-  { "color": "", "name": "Preporučujemo", "icon": "fa-solid fa-star", "param": 2, "cards": []},
-  { "color": "", "name": "Novo u ponudi", "icon": "fa-solid fa-heart", "param": 3, "cards": [] },
-  { "color": "yellow", "name": "Rasprodaja", "icon": "fa-solid fa-sun", "param": 4, "cards": []}
+  { "color": "dark", "name": "Vruća ponuda", "icon": "fa-solid fa-fire", "param": 0,"gte":5 ,"limit": 4, "cards": []},
+  { "color": "", "name": "AKCIJA - POPUSTI", "icon": "fa-solid fa-tag fa-rotate-90", "param": 1,"gte":0 ,"limit": 8, "cards": []},
+  { "color": "", "name": "Preporučujemo", "icon": "fa-solid fa-star", "param": 2,"gte":20 ,"limit": 4, "cards": []},
+  { "color": "", "name": "Novo u ponudi", "icon": "fa-solid fa-heart", "param": 3,"gte":50 ,"limit": 4, "cards": [] },
+  { "color": "yellow", "name": "Rasprodaja", "icon": "fa-solid fa-sun", "param": 4,"gte":95 ,"limit": 4, "cards": []}
 ]

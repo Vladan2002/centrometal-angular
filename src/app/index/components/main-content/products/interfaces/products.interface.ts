@@ -3,8 +3,11 @@ export interface Section {
   param: number;
   color: string;
   icon: string;
+  gte:number;
+  limit: number;
   cards: Product[];
   loaded: boolean;
+
 }
 
 export interface Product {
