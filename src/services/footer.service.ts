@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Footer } from '../app/footer/interfaces/footer.interface';
+import { Footer } from '../shared/footer/interfaces/footer.interface';
 
 @Injectable({
   providedIn: 'root'

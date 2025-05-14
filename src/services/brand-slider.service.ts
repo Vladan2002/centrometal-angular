@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { BrandImage } from '../app/brand-slider/interfaces/brand.interface';
+import { BrandImage } from '../shared/brand-slider/interfaces/brand.interface';
 
 @Injectable({
   providedIn: 'root'

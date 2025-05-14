@@ -8,7 +8,7 @@ import { MainSliderService } from '../../../../../services/main-slider.service';
   styleUrls: ['./main-slider.component.scss']
 })
 export class MainSliderComponent implements OnInit {
-  slides: any;
+  slides: any = { pictures: [] };
 
   constructor(private service: MainSliderService) {}
 
