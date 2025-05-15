@@ -3,35 +3,38 @@
 width: 75%;
 &__slider {
   width: 100%;
-  &__show{
+  padding:0 50px;
+
+
+  &__show {
+    width: 100%;
     position: relative;
     overflow: hidden;
     margin: auto;
     min-height: 250px;
-    padding: 20px 40px;
+
+
+    &__track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
 
     &__slides {
-      position: absolute;
       width: 100%;
-      height: 100%;
+      flex-shrink: 0;
     }
+
     &__img {
       width: 100%;
       height: 100%;
-      opacity: 1;
-      transition: opacity 1s ease-in-out;
-
-      &--active {
-        opacity: 1;
-      }
+      object-fit: cover;
     }
-
-
 
     &__controls {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateY(-100%);
       background-color: rgba(0, 0, 0, 0.5);
       border-radius: 50%;
       color: white;
@@ -41,29 +44,22 @@ width: 75%;
       font-size: 15px;
 
       &--previous {
-        left: 50px;
+        left: 10px;
       }
 
       &--next {
         right: 10px;
       }
     }
-
-
-
-
-
-
-
   }
 
   &__pager {
     position: relative;
     text-align: end;
-    bottom: -235px;
-    z-index: 3;
+    bottom: 35px;
+    z-index: 100;
     width: 100%;
-    padding: 0 40px !important;
+
 
     &__text {
       display: inline-block;
@@ -83,3 +79,25 @@ width: 75%;
     }
   }
 }}}
+
+
+.progress-container {
+  position: relative;
+  width: 100%;
+  height: 3px;
+}
+.progress-container .progress-bg {
+  width: 100%;
+  height: 3px;
+  background-color: gray;
+  position: absolute;
+  z-index: 1;
+}
+.progress-container .progress {
+  width: 25%;
+  height: 3px;
+  background-color: red;
+  position: absolute;
+  z-index: 2;
+  transition: width 0.3s ease-in-out;
+}
