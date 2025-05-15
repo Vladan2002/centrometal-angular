@@ -9,12 +9,12 @@ import {Accordion} from './interfaces/accordion.interface';
   styleUrl: './accordion.component.scss'
 })
 export class AccordionComponent implements OnInit {
-  accordion: Accordion[] | undefined;
+  accordion: Accordion[] =[];
   expandedCategories: { [key: string]: boolean } = {};
   isActive: boolean = true;
   constructor(private accordionService: AccordionService) {}
 
-  fetchAccordionData(): void {
+ private fetchAccordionData(): void {
     this.accordionService.getAccordionData().subscribe({
       next: (data) => {
         this.accordion = data;
@@ -28,17 +28,16 @@ export class AccordionComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.fetchAccordionData()
-
+    this.fetchAccordionData();
   }
 
 
 
-  toggleSubcategories(categoryName: string): void {
+  public toggleSubcategories(categoryName: string): void {
     this.expandedCategories[categoryName] = !this.expandedCategories[categoryName];
   }
 
-  toggleAccordion(): void {
+  public toggleAccordion(): void {
     this.isActive = !this.isActive;
   }
 

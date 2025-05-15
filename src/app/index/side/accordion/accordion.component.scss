@@ -18,6 +18,12 @@
 
     }
 
+    &__no-data{
+      padding: 20px;
+      text-align: center;
+      font-style: italic;
+      color: gray;
+    }
     &__button {
       display: flex;
       cursor: pointer;
@@ -97,3 +103,9 @@
     }
 
 }}
+
+
+.container__side__menu__fallback {
+
+}
+

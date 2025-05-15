@@ -4,23 +4,34 @@
     <p class="container__side__menu__text container__side__menu__text__case">Kupuj po kategoriji</p>
   </button>
 
-  <ng-container *ngFor="let item of accordion">
-    <button
-      class="container__side__menu__button"
-      [ngClass]="{'container__side__menu__button--deactivate-button': !isActive}"
-      (click)="toggleSubcategories(item.category.name)">
-      <p class="container__side__menu__text">{{ item.category.name }}</p>
-      <p class="container__side__menu__text" *ngIf="item?.category?.subcategory?.length">
-       +
-      </p>
-    </button>
-    <button
-      *ngFor="let sub of item?.category?.subcategory"
-      class="container__side__menu__button container__side__menu__button--subcategory"
-      [ngClass]="{'container__side__menu__button--deactivate-button': !expandedCategories[item.category.name] || !isActive}"
+  <ng-container *ngIf="accordion?.length">
+    <ng-container *ngFor="let item of accordion">
+      <button
+        class="container__side__menu__button"
+        [ngClass]="{'container__side__menu__button--deactivate-button': !isActive}"
+        (click)="toggleSubcategories(item.category.name)">
+        <p class="container__side__menu__text">{{ item.category?.name }}</p>
+        <p class="container__side__menu__text" *ngIf="item?.category?.subcategory?.length">+</p>
+      </button>
 
-    >
-      <p class="container__side__menu__text">{{ sub }}</p>
-    </button>
+      <ng-container *ngIf="item?.category?.subcategory?.length">
+        <button
+          *ngFor="let sub of item.category.subcategory"
+          class="container__side__menu__button container__side__menu__button--subcategory"
+          [ngClass]="{
+            'container__side__menu__button--deactivate-button':
+              !expandedCategories[item.category.name] || !isActive
+          }"
+        >
+          <p class="container__side__menu__text">{{ sub }}</p>
+        </button>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="!accordion?.length">
+    <div class="container__side__menu__no-data">
+      <p class="container__side__menu__text">Trenutno nema dostupnih kategorija.</p>
+    </div>
   </ng-container>
 </div>
