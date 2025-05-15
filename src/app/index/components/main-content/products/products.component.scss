@@ -1,13 +1,12 @@
-.container__products{
+.container{
+  &__products{
   &__shape {
     width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
     margin:0 auto;
-
-
-    &__trapez {
+    &__trapezoid {
 
       border-bottom: 40px solid #01AEEE;
       position: relative;
@@ -17,13 +16,9 @@
       width: 100%;
       transform: rotate(180deg);
       margin: 20px 0 20px 40px;
-
-
       &--dark{border-bottom: 40px solid #015575 !important;}
       &--yellow{border-bottom: 40px solid #E59D01 !important;}
-
     }
-
     &__text {
       white-space: nowrap;
       font-size: 1rem;
@@ -35,12 +30,8 @@
       transform: translate(-50%, 50%) rotate(180deg);
       color: white;
       text-transform: uppercase;
-
-
     }
   }
-
-
 &__bar{
   display: flex;
   justify-content: center;
@@ -57,34 +48,6 @@
   gap: 80px;
   margin-left: 0;
 
-
-
-
-
-
-
-
-
-
-  &__button {
-    padding: 10px 5%;
-    background-color: transparent;
-    font-weight: bold;
-    font-size: 1rem;
-    border: 3px solid #01AEEE;
-    text-transform: uppercase;
-    color: #015575;
-    cursor: pointer;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-    &--yellow {
-      border: 3px solid #E59D01;
-    }
-  }
-
-
 }}
 &__discounts{
   &__button {
@@ -96,7 +59,6 @@
     text-transform: uppercase;
     color: #015575;
     cursor: pointer;
-
     &:hover {
       transform: scale(1.05);
     }
@@ -105,14 +67,7 @@
     }
   }
 }
-}
-
-
-
-
-
-
-
+}}
 .skeleton-loader {
   display: flex;
   flex-wrap: wrap;
@@ -124,54 +79,44 @@
   animation: skeleton-loading 1.5s infinite ease-in-out;
   border-radius: 4px;
 
+  &__card{
+    width: 150px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &--img{
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+  }
+  &--badge{
+    width: 40px;
+    height: 20px;
+    border-radius: 5px;
+    align-self: flex-start;
+  }
+  &--name{
+    width: 80%;
+    height: 20px;
+    border-radius: 4px;
+  }
+  &--timer{
+    width: 70%;
+    height: 15px;
+    border-radius: 4px;
+  }
+  &--price{
+    width: 60%;
+    height: 20px;
+    border-radius: 4px;
+  }
 }
-
-.skeleton-card {
-  width: 150px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-}
-
-.skeleton-img {
-  width: 100%;
-  height: 120px;
-  border-radius: 8px;
-}
-
-.skeleton-badge {
-  width: 40px;
-  height: 20px;
-  border-radius: 5px;
-  align-self: flex-start;
-}
-
-.skeleton-name {
-  width: 80%;
-  height: 20px;
-  border-radius: 4px;
-}
-
-.skeleton-timer {
-  width: 70%;
-  height: 15px;
-  border-radius: 4px;
-}
-
-.skeleton-price {
-  width: 60%;
-  height: 20px;
-  border-radius: 4px;
-}
-
 @keyframes skeleton-loading {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
-
-
 .no-products {
   width: 97%;
   display: flex;

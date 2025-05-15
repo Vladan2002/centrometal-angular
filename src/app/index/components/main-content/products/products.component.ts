@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CardComponent } from './card/card.component';
-import {SectionsService,Section} from '../../../../../services/section.service';
+import {SectionsService} from '../../../../../services/section.service';
+import{Section} from "./interfaces/products.interface";
 
 @Component({
   selector: 'app-products',
-  standalone: true,
-  imports: [CommonModule, CardComponent],
+  standalone: false,
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
@@ -16,13 +14,17 @@ export class ProductsComponent implements OnInit {
   constructor(private sectionsService: SectionsService) {}
 
   ngOnInit() {
-    this.sectionsService.getSections().subscribe(sections => {
-      this.sections = sections;
-      setTimeout(() => {
-        this.loadCardsSequentially(0);
-      }, 5000);
-    });
+   this.loadContent()
   }
+
+  private loadContent():void {
+  this.sectionsService.getSections().subscribe(sections => {
+  this.sections = sections;
+  setTimeout(() => {
+  this.loadCardsSequentially(0);
+}, 5000);
+});
+}
 
   private loadCardsSequentially(index: number) {
     if (index >= this.sections.length) return;
