@@ -3,24 +3,27 @@ import { HttpClient } from '@angular/common/http';
 import {Observable, forkJoin, of} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import {Section,Picture,Product} from '../app/index/components/main-content/products/interfaces/products.interface';
+import {ApiService} from './api.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class SectionsService {
-  private apiUrl = 'http://localhost:3000/';
+  private apiUrl: string;
 
-  constructor(private http: HttpClient) {}
-  getSections(): Observable<Section[]> {
+  constructor(private http: HttpClient, private apiService: ApiService) {
+    this.apiUrl = this.apiService.getBaseUrl() + '/';
+  }
+  public getSections(): Observable<Section[]> {
     return this.http.get<Section[]>(this.apiUrl+"sections").pipe(
       map(sections => sections.map(section => ({
         name: section.name,
         param: section.param,
         color: section.color,
         icon: section.icon,
-          gte: section.gte,
-          limit: section.limit,
+        gte: section.gte,
+        limit: section.limit,
         cards: [],
         loaded: false
 
@@ -31,7 +34,7 @@ export class SectionsService {
       })
     );
   }
-  populateSectionCards(section: Section): Observable<Section> {
+ public populateSectionCards(section: Section): Observable<Section> {
         let url=`${this.apiUrl}products?discount_gte=${section.gte}&_limit=${section.limit}`;
     return forkJoin({
       products: this.http.get<Product[]>(url).pipe(catchError(() => of([]))),
@@ -56,4 +59,3 @@ export class SectionsService {
     );
   }
 }
-

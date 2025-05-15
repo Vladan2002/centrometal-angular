@@ -3,17 +3,20 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Footer } from '../shared/footer/interfaces/footer.interface';
+import {ApiService} from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FooterService {
-  private apiUrl = 'http://localhost:3000/footer';
+  private apiUrl: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private apiService:ApiService) {
+    this.apiUrl=this.apiService.getBaseUrl()
+  }
 
   getFooterData(): Observable<Footer> {
-    return this.http.get<Footer>(this.apiUrl).pipe(
+    return this.http.get<Footer>(this.apiUrl+"/footer").pipe(
       catchError(this.handleError)
     );
   }

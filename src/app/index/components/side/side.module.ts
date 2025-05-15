@@ -1,6 +1,6 @@
 import {SideComponent} from './side.component';
 import{NgModule} from '@angular/core';
-import {AccordionModule} from './accordion/accordion.modul';
+import {AccordionModule} from './accordion/accordion.module';
 import {SideBarModule} from './side-bar/side-bar.modul';
 
 @NgModule({
@@ -11,4 +11,4 @@ import {SideBarModule} from './side-bar/side-bar.modul';
   declarations: [SideComponent],
   exports: [SideComponent]
 })
-export class SideModel {}
+export class SideModule {}

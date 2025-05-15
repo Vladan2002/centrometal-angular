@@ -31,7 +31,7 @@
     "id": 5,
     "name": "Mikser",
     "price": 150,
-    "discount": 93,
+    "discount": 0,
     "subcategory_id": 1
   },
   {
