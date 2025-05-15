@@ -1,0 +1,354 @@
+
+
+.navbar {
+  &__gray{
+    display: flex;
+    padding: 0 13%;
+    background-color: #CCCCCC;
+
+    &__left{
+      width: 80%;
+      display: flex;
+      gap: 2rem;
+
+
+    }
+    &__text {
+      padding: 0;
+      margin: 0;
+    }
+    &__right{
+      width: 30%;
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+    }
+  }
+
+  &__header {
+    display: flex;
+    padding: 10px 13% 10px 13%;
+    background-color: #015575;
+
+    &__container {
+      display: flex;
+      width: 100%;
+      height: 80px;}
+
+    &__left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 42%;
+
+      font-size: 2.5rem;
+
+      &__logo {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+      }
+
+      &__text {
+        display: inline-block;
+        transform: scale(1, 1.5);
+        color: #fff;
+        font-weight: bold;
+
+        &:first-child {
+          color: #0BA2D6;
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 58%;
+
+      &__search {
+        width: 70%;
+        flex-wrap: nowrap;
+
+
+        &__magnify {
+          margin-left: -50px;
+          color: #0BA2D6;
+
+        }
+
+      }
+
+
+      &__input {
+        width: 90%;
+        margin-right: 1px;
+        border: none;
+        padding: 15px;
+
+      }
+
+
+      &__link {
+        font-size: 1rem;
+        color: #333;
+        text-decoration: none;
+        border: 3px solid #0BA2D6;
+        border-radius: 50%;
+        padding: 1px;
+        transition: 0.3s;
+
+      }
+
+      &__text {
+        margin: 0 3px 0 0;
+        padding: 0;
+        color: #fff;
+        font-weight: bold;
+      }
+      &__icon{
+
+        padding: 3px;
+        width: 25px;
+        height: 25px;
+        align-content: center;
+        text-align: center;
+        color: #fff;
+      }
+
+      &__buy {
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+
+        &__icon {
+          padding: 3px;
+          width: 25px;
+          height: 25px;
+          align-content: center;
+          text-align: center;
+          color: #fff;
+
+        }
+
+
+
+        &__basket {
+          margin-left: 5px;
+          margin-right: 3px;
+          color: #0BA2D6;
+          border: 0;
+          font-size: 0.8rem;
+        }
+
+
+      }
+
+    }
+
+  }
+
+  &__small {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0;
+
+    &__select {
+      width: 74%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #00ADF0;
+      height: 50px;
+
+      &__button{
+        display: flex;
+        background-color: #00ADF0;
+        flex-grow: 1;
+        text-align: center;
+        padding: 18px 13px 13px 13px;
+        cursor: pointer;
+        border-left: 1px #009AD9 solid;
+        border-right: 1px #009AD9 solid;
+        text-decoration: none;
+        white-space: nowrap;
+        justify-content: center;
+        color: #fff;
+        flex-direction: column;
+
+        &:hover, &--active {
+          border-top: 2px solid white;
+        }
+
+        &:last-child {
+          padding: 0 12px 11px 13px;
+          text-align: start;
+          cursor: auto;
+
+          &:hover, &--active {
+            border-top: none;
+            transform: none;
+          }
+
+
+        }
+
+
+      }
+
+      &__text{
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+        &:first-child {
+          color: rgba(0, 0, 0, 0.5);
+        }
+      }
+      &__icon {
+        color: #fff;
+
+      }
+
+
+    }
+  }
+
+  &__trapezoid-right {
+    border-bottom: 50px solid #00ADF0;
+    border-left: 20px solid transparent;
+    border-right: 0px solid transparent;
+    height: 0;
+    width: 40px;
+    transform: rotate(180deg);
+  }
+
+  &__trapezoid-left {
+    border-bottom: 50px solid #00ADF0;
+    border-left: 0px solid transparent;
+    border-right: 20px solid transparent;
+    height: 0;
+    width: 40px;
+    transform: rotate(180deg);
+  }
+
+
+  &__burger-menu {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+
+    &__icon{
+      padding:0;
+    }
+
+  }
+}
+
+
+@media (max-width: 1230px) {
+  .navbar {
+    &__gray {
+      display: none;
+    }
+
+    &__header {
+      padding: 15px 0 !important;
+
+      &__left {
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      &__right {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2px;
+
+        &__input {
+          min-width: 200px;
+
+        }
+
+        &__search {
+          width: 80% !important;
+          flex-wrap: nowrap;
+          max-width: 300px;
+        }
+
+        &__buy {
+          width: 80% !important;
+          justify-content: center;
+          align-items: center;
+          padding: 5px 0 !important;
+          gap: 10px !important;
+        }
+      }
+
+      &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+
+      }
+
+      &__left__text {
+
+        font-size: 2.5rem;
+
+      }
+    }
+
+
+    &__burger-menu {
+      display: block !important;
+    }
+
+    &__small {
+      &__select {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 175px;
+        left: 0;
+        width: 100% !important;
+        background-color: #00ADF0;
+        z-index: 99999;
+
+
+        &__button {
+          display: block;
+          text-align: center !important;
+          padding: 15px 0 !important;
+          border: none;
+          border-bottom: 1px solid #009AD9;
+          width: 100%;
+
+        }
+
+        &--active {
+          display: flex !important;
+        }
+      }
+
+
+    }
+
+    &__trapezoid-left, &__trapezoid-right {
+      display: none !important;
+    }
+  }
+}
