@@ -5,11 +5,11 @@
   >
     <div
       class="container__products__slider__show__slides"
-      *ngFor="let slide of slides.pictures"
+      *ngFor="let slide of slides?.pictures"
     >
       <img
         class="container__products__slider__show__img"
-        [src]="slide"
+        [src]="slide" alt=""
       />
     </div>
   </div>
