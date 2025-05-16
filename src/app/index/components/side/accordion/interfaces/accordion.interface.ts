@@ -1,7 +1,4 @@
-
-export interface Accordion {
-  category: {
-    name: string;
-    subcategory: string[];
-  };
+export interface CategoryNode {
+  name: string;
+  children?: CategoryNode[];
 }

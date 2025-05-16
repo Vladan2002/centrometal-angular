@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable,  } from 'rxjs';
 import {map} from 'rxjs/operators';
-import {Accordion} from '../app/index/components/side/accordion/interfaces/accordion.interface';
+import {CategoryNode} from '../app/index/components/side/accordion/interfaces/accordion.interface';
 import {ApiService} from './api.service';
 
 
@@ -18,9 +18,9 @@ export class AccordionService {
     this.apiUrl = this.apiService.getBaseUrl();
   }
 
-  getAccordionData(): Observable<Accordion[]> {
-    return this.http.get<{ accordion: Accordion[] }>(this.apiUrl+'/accordion').pipe(
-      map(response => response.accordion)
-    );
+  getAccordionData(): Observable<CategoryNode[]> {
+    return this.http.get<{ accordion: CategoryNode[] }>(this.apiUrl + '/accordion')
+      .pipe(map(response => response.accordion));
   }
+
 }

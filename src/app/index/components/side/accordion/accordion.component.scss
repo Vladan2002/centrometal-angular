@@ -43,16 +43,6 @@
         width: 18px;
       }
 
-      &:first-child {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100%;
-        background-color: #005474;
-        color: white;
-
-
-      }
 
       &--subcategory {
         background-color: darken(#F4F4F4, 3%) !important;

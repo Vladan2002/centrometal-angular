@@ -1,26 +1,18 @@
-<div class="container__side__menu" id="menu">
-  <button class="container__side__menu__button" (click)="toggleAccordion()">
-    <img class="container__side__menu__button__img" src="../../../../../assets/grid.png" alt="">
-    <p class="container__side__menu__text container__side__menu__text__case">Kupuj po kategoriji</p>
-  </button>
+<button
+  class="container__side__menu__button"
+  [ngClass]="{ 'container__side__menu__button--deactivate-button': !isActive }"
+  (click)="toggle(node.name)">
+  <p class="container__side__menu__text">{{ node.name }}</p>
+  <p class="container__side__menu__text" *ngIf="node.children?.length">+</p>
+</button>
 
-  <ng-container *ngFor="let item of accordion">
-    <button
-      class="container__side__menu__button"
-      [ngClass]="{'container__side__menu__button--deactivate-button': !isActive}"
-      (click)="toggleSubcategories(item.category.name)">
-      <p class="container__side__menu__text">{{ item.category.name }}</p>
-      <p class="container__side__menu__text" *ngIf="item.category.subcategory?.length">
-       +
-      </p>
-    </button>
-    <button
-      *ngFor="let sub of item.category.subcategory"
+<ng-container *ngIf="node.children?.length && expandedCategories[node.name]">
+  <ng-container *ngFor="let child of node.children">
+    <app-accordion
+      [node]="child"
+      [isActive]="isActive"
+      [expandedCategories]="expandedCategories"
       class="container__side__menu__button container__side__menu__button--subcategory"
-      [ngClass]="{'container__side__menu__button--deactivate-button': !expandedCategories[item.category.name] || !isActive}"
-
-    >
-      <p class="container__side__menu__text">{{ sub }}</p>
-    </button>
+    ></app-accordion>
   </ng-container>
-</div>
+</ng-container>

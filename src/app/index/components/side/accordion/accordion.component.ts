@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {AccordionService} from '../../../../../services/accordion.service';
-import {Accordion} from './interfaces/accordion.interface';
+import {Component, Input} from '@angular/core';
+import {CategoryNode} from './interfaces/accordion.interface';
 
 @Component({
   selector: 'app-accordion',
@@ -8,38 +7,12 @@ import {Accordion} from './interfaces/accordion.interface';
   templateUrl: './accordion.component.html',
   styleUrl: './accordion.component.scss'
 })
-export class AccordionComponent implements OnInit {
-  accordion: Accordion[] | undefined;
-  expandedCategories: { [key: string]: boolean } = {};
-  isActive: boolean = true;
-  constructor(private accordionService: AccordionService) {}
+export class AccordionComponent{
+  @Input() node!: CategoryNode;
+  @Input() isActive = true;
+  @Input() expandedCategories: { [key: string]: boolean } = {};
 
-  fetchAccordionData(): void {
-    this.accordionService.getAccordionData().subscribe({
-      next: (data) => {
-        this.accordion = data;
-        console.log(this.accordion);
-      },
-      error: (err) => {
-        console.error('Error:', err);
-      }
-    });
+  toggle(name: string): void {
+    this.expandedCategories[name] = !this.expandedCategories[name];
   }
-
-
-  ngOnInit(): void {
-    this.fetchAccordionData()
-
-  }
-
-
-
-  toggleSubcategories(categoryName: string): void {
-    this.expandedCategories[categoryName] = !this.expandedCategories[categoryName];
-  }
-
-  toggleAccordion(): void {
-    this.isActive = !this.isActive;
-  }
-
 }
