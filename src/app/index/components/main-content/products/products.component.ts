@@ -20,9 +20,6 @@ export class ProductsComponent implements OnInit {
   private loadContent():void {
   this.sectionsService.getSections().subscribe(sections => {
   this.sections = sections;
-  setTimeout(() => {
-  this.loadCardsSequentially(0);
-}, 5000);
 });
 }
 
