@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable,  } from 'rxjs';
 import {map} from 'rxjs/operators';
-import {Accordion} from '../app/index/side/accordion/interfaces/accordion.interface';
+import {CategoryNode} from '../app/index/side/accordion/interfaces/accordion.interface';
+
 
 
 
@@ -11,13 +12,14 @@ import {Accordion} from '../app/index/side/accordion/interfaces/accordion.interf
   providedIn: 'root'
 })
 export class AccordionService {
-  private apiUrl = 'http://localhost:3000/accordion';
+  private apiUrl: string="localhost:3000/accordion";
 
-  constructor(private http: HttpClient) {}
-
-  getAccordionData(): Observable<Accordion[]> {
-    return this.http.get<Accordion[]>(this.apiUrl).pipe(
-      map(response => response)
-    );
+  constructor(private http: HttpClient) {
   }
+
+  getAccordionData(): Observable<CategoryNode[]> {
+    return this.http.get<{ accordion: CategoryNode[] }>(this.apiUrl + '/accordion')
+      .pipe(map(response => response.accordion));
+  }
+
 }
