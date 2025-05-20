@@ -42,7 +42,6 @@
           height: 18px;
           width: 18px;
         }
-
         &:first-child {
           display: flex;
           align-items: center;
@@ -54,6 +53,19 @@
 
         }
 
+
+        &--subcategory {
+          background-color: darken(#F4F4F4, 3%) !important;
+          padding-left: 15% !important;
+          font-weight: normal !important;
+          font-size: 1rem !important;
+          margin: 0 3px !important;
+        }
+
+        &--deactivate-button {
+          display: none !important;
+        }
+      }
 
 
     }

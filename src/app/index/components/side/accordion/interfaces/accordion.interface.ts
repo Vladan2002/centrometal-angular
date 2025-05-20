@@ -1,4 +1,4 @@
 export interface CategoryNode {
   name: string;
-  children?: CategoryNode[];
+  children: CategoryNode[];
 }

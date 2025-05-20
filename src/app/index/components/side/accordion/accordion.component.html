@@ -1,18 +1,18 @@
 <button
   class="container__side__menu__button"
   [ngClass]="{ 'container__side__menu__button--deactivate-button': !isActive }"
-  (click)="toggle(node.name)">
-  <p class="container__side__menu__text">{{ node.name }}</p>
-  <p class="container__side__menu__text" *ngIf="node.children?.length">+</p>
+  (click)="toggle()"
+  >
+  <p class="container__side__menu__text">{{ accordion?.name }}</p>
+  <p class="container__side__menu__text" *ngIf="accordion.children?.length">
+   +
+  </p>
 </button>
-
-<ng-container *ngIf="node.children?.length && expandedCategories[node.name]">
-  <ng-container *ngFor="let child of node.children">
+<ng-container *ngIf="accordion?.children?.length && expanded">
+  <ng-container *ngFor="let child of accordion?.children">
     <app-accordion
-      [node]="child"
+      [accordion]="child"
       [isActive]="isActive"
-      [expandedCategories]="expandedCategories"
-      class="container__side__menu__button container__side__menu__button--subcategory"
     ></app-accordion>
   </ng-container>
 </ng-container>

@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
 import {CategoryNode} from './interfaces/accordion.interface';
-
 @Component({
   selector: 'app-accordion',
   standalone:false,
@@ -8,11 +7,12 @@ import {CategoryNode} from './interfaces/accordion.interface';
   styleUrl: './accordion.component.scss'
 })
 export class AccordionComponent{
-  @Input() node!: CategoryNode;
+  @Input() accordion!: CategoryNode;
   @Input() isActive = true;
-  @Input() expandedCategories: { [key: string]: boolean } = {};
 
-  toggle(name: string): void {
-    this.expandedCategories[name] = !this.expandedCategories[name];
+  expanded = false;
+
+  toggle(): void {
+    this.expanded = !this.expanded;
   }
 }

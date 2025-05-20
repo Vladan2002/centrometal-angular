@@ -14,7 +14,16 @@
         {
           "name": "Oprema",
           "children": [
-            { "name": "Zidni nosači" },
+            { "name": "Zidni nosači",
+              "children": [
+                {
+                  "name": "plavi"
+                },{
+                  "name": "zeleni"
+
+                }
+              ]
+            },
             { "name": "Kablovi" }
           ]
         }
