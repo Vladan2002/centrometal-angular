@@ -12,11 +12,13 @@
     </p>
   </button>
 
+  <ng-container *ngIf="accordion">
   <ng-container *ngFor="let item of accordion">
     <app-accordion
       [accordion]="item"
       [isActive]="isActive"
     ></app-accordion>
+  </ng-container>
   </ng-container>
 </div>
 
