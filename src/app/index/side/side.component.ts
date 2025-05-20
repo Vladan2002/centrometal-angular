@@ -9,12 +9,19 @@ import {AccordionService} from '../../../services/accordion.service';
   styleUrl: './side.component.scss'
 })
 export class SideComponent implements OnInit {
+  public isActive = false;
   public accordion: CategoryNode[] = [];
   constructor(private accordionService: AccordionService) {}
 
-  ngOnInit(): void {
+  toggleMenu(): void {
+    this.isActive = !this.isActive;
+  }
+  fetchData(): void {
     this.accordionService.getAccordionData().subscribe((data) => {
       this.accordion = data;
-    });
+    })
+  }
+  ngOnInit(): void {
+    this.fetchData();
   }
 }

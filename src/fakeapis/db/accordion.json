@@ -1,57 +1,33 @@
-[
+{
+  "accordion": [
     {
-      "category": {
-        "name": "Bijela Tehnika",
-        "subcategory": ["Veš mašine", "Fižider", "Ugradne rerne"]
-      }
+      "name": "Bijela Tehnika",
+      "children": [
+        { "name": "Veš mašine" },
+        { "name": "Frižideri" }
+      ]
     },
     {
-      "category": {
-        "name": "Ugradna Tehnika",
-        "subcategory": ["Ploče", "Ugradne rerne", "Ugradne mikrotalasne"]
-      }
-    },
-    {
-      "category": {
-        "name": "Klimatizacija i grijanje",
-        "subcategory": ["Klime", "Grijalice", "Ventilatori"]
-      }
-    },
-    {
-      "category": {
-        "name": "Mali kućni aparati",
-        "subcategory": ["Aspiratori", "Mikser", "Usisivači"]
-      }
-    },
-    {
-      "category": {
-        "name": "TV i Video",
-        "subcategory": ["LED TV", "Smart TV", "Oprema za video"]
-      }
-    },
-    {
-      "category": {
-        "name": "Audio",
-        "subcategory": ["Slušalice", "Soundbarovi", "Kvalitetni zvučnici"]
-      }
-    },
-    {
-      "category": {
-        "name": "Telefonija",
-        "subcategory": []
-      }
-    },
-    {
-      "category": {
-        "name": "Kamere",
-        "subcategory": []
-      }
-    },
-    {
-      "category": {
-        "name": "Auto Tehnika",
-        "subcategory": []
-      }
+      "name": "TV i Video",
+      "children": [
+        { "name": "LED TV" },
+        {
+          "name": "Oprema",
+          "children": [
+            { "name": "Zidni nosači",
+              "children": [
+                {
+                  "name": "plavi"
+                },{
+                  "name": "zeleni"
+
+                }
+              ]
+            },
+            { "name": "Kablovi" }
+          ]
+        }
+      ]
     }
   ]
-
+}

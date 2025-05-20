@@ -1,12 +1,12 @@
 import {SideComponent} from './side.component';
 import{NgModule} from '@angular/core';
 import {AccordionModule} from './accordion/accordion.module';
-import {NgForOf} from "@angular/common";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
     imports: [
         AccordionModule,
-        NgForOf
+        CommonModule
     ],
   declarations: [SideComponent],
   exports: [SideComponent]

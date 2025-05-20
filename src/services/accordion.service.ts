@@ -4,15 +4,11 @@ import { Observable,  } from 'rxjs';
 import {map} from 'rxjs/operators';
 import {CategoryNode} from '../app/index/side/accordion/interfaces/accordion.interface';
 
-
-
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class AccordionService {
-  private apiUrl: string="localhost:3000/accordion";
+  private apiUrl: string="http://localhost:3000";
 
   constructor(private http: HttpClient) {
   }
