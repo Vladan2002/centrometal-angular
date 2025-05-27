@@ -1,0 +1,12 @@
+  <div class="slider__container skeleton-loader">
+    <div class="skeleton skeleton--img"></div>
+  </div>
+  <div class="slider__pager">
+    <button class="slider__controls">❮</button>
+    <div class="slider__pager">
+      <div class="slider__pager__container">
+        <div *ngFor="let i of [1,2,3]" class="skeleton skeleton--thumbnail skeleton--loadin"></div>
+      </div>
+    </div>
+    <button class="slider__controls">❯</button>
+  </div>
