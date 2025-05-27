@@ -1,0 +1,72 @@
+[
+{
+"product_id": 1,
+"SKU": "12345678",
+"product_description": "Digitalni ekran: DA | Teleskopske fioke: DA | Osvetljenje: LED | Dvostruka vrata: NE | Autonomija u slučaju nestanka struje: 12h | Hlađenje bez frosta: DA | Buka: 38dB",
+"product_specs": "Kapacitet: 300L | Energetski razred: A++ | Boja: Bela | Težina: 70kg | Zamrzivač: Da | Led svetlo: Ne | Dimenzije (ŠxVxD): 60x180x65 cm | Teleskopski fiok: Da | Digitalni ekran: Da | Klima uređaj: Ne | Hlađenje bez frosta: Da | Kapacitet zamrzivača: 80L | Broj polica: 4 | Broj fioka: 2 | Kontrola temperature: Digitalna | Osvetljenje: LED | Regulator vlage: Da | Autonomija u slučaju nestanka struje: 12h | Nivo buke: 38 dB | Materijal unutrašnjosti: Nehrđajući čelik | Broj vrata: 2 | Sigurnosna funkcija: Da | Tip vrata: Klasična | Garantni rok: 2 godine",
+"id": "1"
+},
+{
+"product_id": 2,
+"SKU": "2",
+"product_description": "Elektronsko upravljanje: A | Samostojeća: DA | Energetski razred: A | Boja: Crna",
+"product_specs": "Kapacitet: 65L | Maksimalna temperatura: 250°C | Dimenzije (ŠxVxD): 60x60x55 cm | Način čišćenja: Katalitički | Broj programa: 8 | Vrsta grejača: Gornji i donji | Broj brzina ventilatora: 2 | Program za pečenje hleba: DA | Program za roštilj: DA | Program za pečenje pizza: DA | Osvetljenje unutar rerne: DA | Prečnik posude za pečenje: 40 cm | Snaga grejača: 2200W | Sigurnosna funkcija: Da | Materijal vrata: Staklo | Kontrola temperature: Digitalna | Timer: DA | Lako čišćenje: DA | Auto start funkcija: NE",
+"id": "2"
+},
+{
+"product_id": 3,
+"SKU": "4445567",
+"product_description": "Vrsta ploče: Indukciona | Broj zona: 4 | Touch kontrola: DA | Booster funkcija: DA",
+"product_specs": "Snaga: 7kW | Dimenzije (ŠxVxD): 60x5x52 cm | Boja: Crna | Staklokeramička površina: DA | Automatsko isključivanje: DA | Detekcija posude: DA | Sigurnosna blokada: DA | Tip kontrole: Digitalna | Funkcija boost: DA | Funkcija pametnog zaključavanja: DA | Broj brzina: 10 | Maksimalna temperatura: 240°C | Zaštita od pregrevanja: DA | Automatska detekcija posude: DA | Osetljivost na veličinu posude: DA | Efikasnost grejnih zona: 95% | Težina: 7kg | Dužina kabla: 1.2m | Garantni rok: 2 godine",
+"id": "3"
+},
+{
+"id": "4",
+"product_id": 4,
+"SKU": "5435345",
+"product_description": "Vrsta aspiratora: Teleskopski | Maksimalni protok vazduha: 400 m³/h | LED osvetljenje: DA | Brzine ventilatora: 3",
+"product_specs": "Širina: 60 cm | Nivo buke: 65 dB | Filteri: Metalni perivi | Način rada: Odvod ili recirkulacija | Snaga motora: 120W | Materijal: Nehrđajući čelik | Dimenzije (ŠxVxD): 60x18x50 cm | Broj brzina: 3 | Tip kontrole: Dugme | Tip ventila: Dvostruki | Daljinsko upravljanje: NE | Automatsko isključivanje: DA | Filter za mast: DA | Broj svetlosnih LED traka: 2 | Snaga osvetljenja: 10W | Način čišćenja: Perivi filteri | Instalacija: Na zidu | Garantni rok: 2 godine"
+},
+{
+"id": "5",
+"product_id": 5,
+"SKU": "43534535",
+"product_description": "Snaga motora: 600W | Broj brzina: 5 | Turbo funkcija: DA | Posuda za mešanje: NE",
+"product_specs": "Težina: 1.2kg | Materijal kućišta: Plastika | Dodatni nastavci: DA | Maksimalna snaga: 600W | Materijal lopatica: Nerđajući čelik | Kapacitet posude za mešanje: 1L | Broj funkcija: 6 | Podložna: DA | Dizajn: Ergonomičan | Kontrola brzine: DA | Sigurnosna funkcija: DA | Zaštita od preopterećenja: DA | Lako čišćenje: DA | Napajanje: 220V | Dužina kabla: 1.5m | Garantni rok: 1 godina"
+},
+{
+"id": "6",
+"product_id": 6,
+"SKU": "23453425",
+"product_description": "Zapremina: 6L | Materijal: Nerđajući čelik | Indukcija: DA | Sigurnosni ventil: DA",
+"product_specs": "Dimenzije (ŠxVxD): 25x30x25 cm | Maksimalni pritisak: 80kPa | Boja: Srebrna | Snaga: 1000W | Funkcija odlaganja: DA | LCD ekran: DA | Kontrola temperature: Digitalna | Broj programa: 5 | Automatsko zaključavanje: DA | Zaštita od pregrevanja: DA | Dužina kabla: 1.8m | Tip poklopca: Brzi | Uključena funkcija za odmor: DA | Autonomija: 2 h | Garantni rok: 1 godina"
+},
+{
+"id": "24c4",
+"product_id": "754d",
+"SKU": "232323",
+"product_description": "Hladi: Jako Dobro| Boja: Bijela",
+"product_specs": "Hladi: Jako Dobro| Boja: Bijela"
+},
+{
+"id": "0504",
+"product_id": "eac9",
+"SKU": "7654",
+"product_description": "",
+"product_specs": ""
+},
+{
+"id": "e3d9",
+"product_id": "0e25",
+"SKU": "777",
+"product_description": "Najveci:da|Dobar momak:ne|",
+"product_specs": "Najveci:da|Dobar momak:ne|"
+},
+{
+"id": "4ec6",
+"product_id": "284a",
+"SKU": "21231123",
+"product_description": "asdasd:dasda| asadasd:sadas| asdasdad:asdasdad",
+"product_specs": "asdadasd| sadasd| sadasdad"
+}
+]

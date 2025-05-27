@@ -1,46 +1,22 @@
 
-<div class="slider__container skeleton-loader">
-  <div class="skeleton skeleton__img"></div>
-</div>
-<div class="slider__pager">
-  <button class="main__left__product__slider__controls" id="">❮</button>
-  <div class="main__left__product__slider__pager">
-    <div  class="pagerrrr">
-      <div class="skeleton skeleton__thumbnail"></div>
-      <div class="skeleton skeleton__thumbnail"></div>
-      <div class="skeleton skeleton__thumbnail"></div>
-      <div class="skeleton skeleton__thumbnail"></div>
-      <div class="skeleton skeleton__thumbnail"></div>
-      <div class="skeleton skeleton__thumbnail"></div>
-    </div>
-  </div>
-  <button class="main__left__product__slider__controls" >❯</button>
-</div>
-
-
-
-<div class="slider__container" id="slider-container">
-
-
-  <img class="slider__img" src="" alt="" />
-
-</div>
-
-<div class="slider__pager">
-  <button class="main__left__product__slider__controls">❮</button>
-
-  <div class="main__left__product__slider__pager">
-    <div id="bx-pager" class="pagerrrr">
-
-      <img class="slider__thumbnail slider__thumbnail--active"
-           src="" alt="Thumbnail">
-
-    </div>
+  <div class="slider__container" id="slider-container">
+    <img class="slider__img" [src]="pictures[activeIndex].url" alt="Main image" />
   </div>
 
-  <button class="main__left__product__slider__controls" id="next-slide">❯</button>
-</div>
-
-
-
+  <div class="slider__pager">
+    <button class="slider__controls" (click)="prev()">❮</button>
+    <div class="slider__pager">
+      <div id="bx-pager" class="slider__pager__container">
+        <img
+          *ngFor="let img of pictures; let i = index"
+          [class.slider__thumbnail--active]="i === activeIndex"
+          class="slider__thumbnail"
+          [src]="img.url"
+          alt="Thumbnail"
+          (click)="setActive(i)"
+        />
+      </div>
+    </div>
+    <button class="slider__controls" (click)="next()">❯</button>
+  </div>
 

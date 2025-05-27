@@ -29,6 +29,7 @@ export class SectionComponent implements OnInit {
     this.sectionService.populateSectionCards(this.section).subscribe(
       (res) => {
         this.section = res;
+        console.log(this.section);
       },
       (err) => {
         console.error('Error', err);

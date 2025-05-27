@@ -6,6 +6,7 @@ const brands=require('./db/brands.json');
 const sections=require('./db/sections.json');
 const products=require('./db/products.json');
 const pictures=require('./db/pictures.json');
+const description=require('./db/description.json');
 
 module.exports = () => ({
   navbar: navbar,
@@ -16,4 +17,5 @@ module.exports = () => ({
   sections:sections,
   products:products,
   pictures:pictures,
+  description:description,
 });

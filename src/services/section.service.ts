@@ -46,10 +46,10 @@ export class SectionsService {
         cards: products
           .map(product => ({
             ...product,
-            picture: {
+            picture: [{
               product_id: product.id,
               url: pictures.find(pic => pic.product_id === product.id)?.url || 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png'
-            }
+            }]
           }))
       })),
       catchError(error => {

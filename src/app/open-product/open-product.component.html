@@ -9,36 +9,21 @@
   <div class="main__left">
     <div class="glavni">
       <div class="slider" id="slider">
-        <app-product-slider></app-product-slider>
+        <app-product-slider-skeleton *ngIf="!loading"></app-product-slider-skeleton>
+        <app-product-slider *ngIf="productData" [pictures]="productData.picture"></app-product-slider>
       </div>
 
       <div class="main__left__description" id="description">
-
-
-        <div class="main__left__description__title">
-          <div class="skeleton skeleton__title"></div>
-          <div class="main__left__description__sub-title">
-            <div class="main__left__description__sub-div">
-              <div class="skeleton skeleton__price"></div>
-            </div>
-            <div class="main__left__description__sub-div">
-              <div class="skeleton skeleton__sku"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-        <div class="skeleton skeleton-text"></div>
-
+        <app-product-description-skeleton *ngIf="!loading"></app-product-description-skeleton>
+      <app-product-description *ngIf="productDescription && productData" [productData]="productData"
+    [productDescription]="productDescription"
+></app-product-description>
 
       </div>
 
     </div>
     <div id="table">
-      //tabela
+<app-product-table *ngIf="productDescription" [productDescription]="productDescription"></app-product-table>
     </div>
 
     <div class="main__left__similar">
@@ -49,9 +34,6 @@
       <div class="container__products__bar" id="discounts-bar">
         //proizvodi
       </div>
-
-
-
     </div>
   </div>
 
