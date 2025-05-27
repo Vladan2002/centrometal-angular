@@ -1,23 +1,29 @@
-import { Component } from '@angular/core';
-import {NgIf} from '@angular/common';
-import {
-  ProductDescriptionComponent
-} from '../../open-product/components/product-description/product-description.component';
-import {
-  ProductDescriptionSkeletonComponent
-} from '../../open-product/product-description-skeleton/product-description-skeleton.component';
-import {ProductSliderComponent} from '../../open-product/components/product-slider/product-slider.component';
-import {
-  ProductSliderSkeletonComponent
-} from '../../open-product/product-slider-skeleton/product-slider-skeleton.component';
-import {ProductTableComponent} from '../../open-product/product-table/product-table.component';
-
+import {Component, OnInit} from '@angular/core';
+import {Product} from './products.interface';
+import {OpenProductService} from '../../services/open-product.service';
+import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-open-product',
   standalone:false,
   templateUrl: './open-product.component.html',
   styleUrl: './open-product.component.scss'
 })
-export class OpenProductComponent {
-
+export class OpenProductComponent implements OnInit {
+  product: Product | null = null;
+  loader: boolean = true;
+  id:number = -1;
+  constructor(private openProductService: OpenProductService,private route: ActivatedRoute
+  ) {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+  }
+  ngOnInit() {
+    this.fetchData()
+  }
+  private fetchData(){
+    this.loader = true;
+    this.openProductService.getData(this.id).subscribe(data=>{
+      this.product = data;
+      this.loader = false;
+    })
+  }
 }

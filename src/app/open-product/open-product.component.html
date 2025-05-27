@@ -1,19 +1,16 @@
-
-
 <div class="page-navigation">
   <span class="page-navigation__text">Naslovna /</span><span class="page-navigation__text">Proizvodi /</span><span class="page-navigation__text">grupa robe</span>
 </div>
 
-
 <div class="main">
   <div class="main__left">
     <div class="main__left__content">
-      <div class="main__left__content__slider" id="slider">
-      <app-product-slider-skeleton></app-product-slider-skeleton>
+      <div class="main__left__slider">
+      <app-product-slider-skeleton *ngIf="loader"></app-product-slider-skeleton>
+        <app-product-slider *ngIf="product" [pictures]="product.picture"></app-product-slider>
       </div>
-
       <div class="main__left__description" id="description">
-        <app-product-description-skeleton></app-product-description-skeleton>
+        <app-product-description-skeleton *ngIf="loader"></app-product-description-skeleton>
       </div>
 
     </div>
@@ -33,11 +30,6 @@
   </div>
 
   <div class="main__right" id="right-sidebar">
-
-
   </div>
-
-
-
 </div>
 
