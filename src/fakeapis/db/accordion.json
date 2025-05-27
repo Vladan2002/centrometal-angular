@@ -1,2 +1,33 @@
 {
+  "accordion": [
+    {
+      "name": "Bijela Tehnika",
+      "children": [
+        { "name": "Veš mašine" },
+        { "name": "Frižideri" }
+      ]
+    },
+    {
+      "name": "TV i Video",
+      "children": [
+        { "name": "LED TV" },
+        {
+          "name": "Oprema",
+          "children": [
+            { "name": "Zidni nosači",
+              "children": [
+                {
+                  "name": "plavi"
+                },{
+                  "name": "zeleni"
+
+                }
+              ]
+            },
+            { "name": "Kablovi" }
+          ]
+        }
+      ]
+    }
+  ]
 }

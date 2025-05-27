@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Ugradni Friziderr",
+    "price": 150,
+    "discount": 22,
+    "subcategory_id": 3,
+    "id": 1
+  },
+  {
+    "name": "Rerna",
+    "price": 150,
+    "discount": 10,
+    "subcategory_id": 6,
+    "id": 2
+  },
+  {
+    "name": "Indukciona ploča",
+    "price": 150,
+    "discount": 20,
+    "subcategory_id": 6,
+    "id": 3
+  },
+  {
+    "id": 4,
+    "name": "Aspirator",
+    "price": 150,
+    "discount": 20,
+    "subcategory_id": 1
+  },
+  {
+    "id": 5,
+    "name": "Mikser",
+    "price": 150,
+    "discount": 0,
+    "subcategory_id": 1
+  },
+  {
+    "id": 6,
+    "name": "Ekspres Lonac",
+    "price": 150,
+    "discount": 0,
+    "subcategory_id": 1
+  },
+  {
+    "id": 7,
+    "name": "Blender",
+    "price": 150,
+    "discount": 0,
+    "subcategory_id": 1
+  },
+  {
+    "id": 8,
+    "name": "Slusalice",
+    "price": 150,
+    "discount": 0,
+    "subcategory_id": 1
+  },
+  {
+    "id": 9,
+    "name": "Air Fryer",
+    "price": 150,
+    "discount": 50,
+    "subcategory_id": 5
+  },
+  {
+    "id": 10,
+    "name": "MikroTalasna",
+    "price": 150,
+    "discount": 60,
+    "subcategory_id": 1
+  },
+  {
+    "name": "Zvucnik",
+    "price": 150,
+    "discount": 5,
+    "subcategory_id": 1,
+    "id": 11
+  }
+]
