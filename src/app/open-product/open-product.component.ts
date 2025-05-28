@@ -12,10 +12,10 @@ import {OpenProductService} from "../../services/open-product.service";
 })
 export class OpenProductComponent implements OnInit {
 
-  productData: Product | null =null;
-  productDescription: ProductDescription | null =null;
-  loading = true;
-  id: number = 1;
+  public productData!: Product;
+  public productDescription: ProductDescription[]=[];
+  public loading = true;
+  private id: number = -1;
 
   constructor(
       private dataService: OpenProductService,
@@ -24,28 +24,25 @@ export class OpenProductComponent implements OnInit {
   // this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
 
-    setTimeout(() => this.loadContent(), 50000);
+    setTimeout(() => this.loadContent(), 1000);
 
   }
 
-  loadContent(): void {
-    this.loading = true;
+  private loadContent(): void {
     this.dataService.getData(this.id).subscribe(data => {
       this.productData = data;
       console.log(this.productData);
       if (this.productData?.id) {
         this.dataService.getDescription(this.productData.id).subscribe(desc => {
           this.productDescription = desc;
+          this.loading = false;
         });
       } else {
-        console.warn('', this.productData);
+        console.warn('Not valid', this.productData);
       }
-      this.loading = false;
-
     });
-    this.loading=true;
 
   }
 }

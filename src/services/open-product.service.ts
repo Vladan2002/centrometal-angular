@@ -14,17 +14,14 @@ export class OpenProductService {
   constructor(private http: HttpClient) {
   }
 
-  getData(id: number): Observable<Product | null> {
+  public getData(id: number): Observable<Product> {
     return forkJoin({
-      product: this.http.get<Product>(`${this.apiUrl}/products/${id}`).pipe(
-        catchError(() => of(null))
-      ),
+      product: this.http.get<Product>(`${this.apiUrl}/products/${id}`),
       pictures: this.http.get<Picture[]>(`${this.apiUrl}/pictures?product_id=${id}`).pipe(
         catchError(() => of([]))
       )
     }).pipe(
       map(({ product, pictures }) => {
-        if (!product) return null;
         return {
           ...product,
           picture: pictures.length > 0
@@ -37,12 +34,12 @@ export class OpenProductService {
       }),
       catchError(error => {
         console.error('Error fetching product and pictures', error);
-        return of(null);
+        throw error;
       })
     );
   }
-  getDescription(id: number):Observable<ProductDescription> {
-    return this.http.get<ProductDescription>(`${this.apiUrl}/description?product_id=${id}`)
+  public getDescription(id: number):Observable<ProductDescription[]> {
+    return this.http.get<ProductDescription[]>(`${this.apiUrl}/description?product_id=${id}`)
   }
 
 

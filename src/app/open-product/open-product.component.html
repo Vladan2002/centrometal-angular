@@ -14,12 +14,12 @@
 
       <div class="main__left__description" id="description">
         <app-product-description-skeleton *ngIf="loading"></app-product-description-skeleton>
-        <app-product-description *ngIf="productDescription && productData" [productData]="productData" [productDescription]="productDescription"></app-product-description>
+        <app-product-description *ngIf="productDescription[0] && productData" [productData]="productData" [productDescription]="productDescription"></app-product-description>
       </div>
 
     </div>
     <div id="table">
-        <app-product-info *ngIf="productDescription" [productDescription]="productDescription"></app-product-info>
+        <app-product-info [productDescription]="productDescription"></app-product-info>
     </div>
 
     <div class="main__left__similar">

@@ -31,13 +31,13 @@
       <div class="main__table__content__info__left">
         <p *ngFor="let spec of productSpecsLeft">{{ spec }}</p>
         <ng-container *ngIf="!productSpecsLeft.length">
-          <div class="skeleton skeleton-text" *ngFor="let s of [].constructor(7)"></div>
+          <div class="skeleton skeleton--text" *ngFor="let s of limit"></div>
         </ng-container>
       </div>
       <div class="main__table__content__info__right">
         <p *ngFor="let spec of productSpecsRight">{{ spec }}</p>
         <ng-container *ngIf="!productSpecsRight.length">
-          <div class="skeleton skeleton-text" *ngFor="let s of [].constructor(7)"></div>
+          <div class="skeleton skeleton--text" *ngFor="let s of limit"></div>
         </ng-container>
       </div>
     </div>
@@ -53,7 +53,7 @@
     <p>Ocijenite ovaj proizvod</p>
     <span
       class="fa fa-star"
-      *ngFor="let star of [1, 2, 3, 4, 5]"
+      *ngFor="let star of limit"
       [class.checked]="star <= tempStars"
       (click)="rateStar(star)">
     </span>
