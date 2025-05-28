@@ -3,7 +3,7 @@
     "name": "Ugradni Friziderr",
     "price": 150,
     "discount": 22,
-    "subcategory_id": 3,
+    "subcategory_id": 6,
     "id": 1
   },
   {
@@ -25,21 +25,21 @@
     "name": "Aspirator",
     "price": 150,
     "discount": 20,
-    "subcategory_id": 1
+    "subcategory_id": 6
   },
   {
     "id": 5,
     "name": "Mikser",
     "price": 150,
     "discount": 0,
-    "subcategory_id": 1
+    "subcategory_id": 6
   },
   {
     "id": 6,
     "name": "Ekspres Lonac",
     "price": 150,
     "discount": 0,
-    "subcategory_id": 1
+    "subcategory_id": 6
   },
   {
     "id": 7,
