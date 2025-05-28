@@ -27,7 +27,13 @@
     </div>
     <div class="container__products__discounts">
       <div class="container__products__bar" id="discounts-bar">
-        //proizvodi
+        <ng-container *ngIf="products">
+            <app-card *ngFor="let item of products" [product]="item"></app-card>
+        </ng-container>
+          <ng-container *ngIf="loader">
+              <app-skeleton-card [limit]="limit"></app-skeleton-card>
+          </ng-container>
+          <app-no-products *ngIf="!loader && !products?.length"></app-no-products>
       </div>
     </div>
   </div>
