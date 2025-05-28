@@ -15,13 +15,7 @@
     </ng-container>
 
     <ng-container *ngIf="!section?.cards?.length && section?.loaded">
-      <div class="no-products">
-        <h2>Nema proizvoda u ovoj sekciji</h2>
-        <p>
-          Trenutno nemamo proizvode koji odgovaraju sekciji
-          {{ section?.name}}. Pokušajte kasnije
-        </p>
-      </div>
+    <app-no-products [sectionName]="section.name"></app-no-products>
     </ng-container>
 
     <ng-container *ngIf="section?.cards?.length && section?.loaded">

@@ -10,22 +10,23 @@ import {SectionsService} from '../../../../../../services/section.service';
 })
 export class SectionComponent implements OnInit {
   @Input() section!: Section;
+  public limit:number[]=[];
+  public loader:boolean = false;
 
   constructor(private sectionService:SectionsService) {}
-  public limit:any;
-  loader:boolean = false;
 
-  ngOnInit(): void {
+
+  public ngOnInit(): void {
    this.loadCards()
   }
 
-  loadCards(): void {
+  private loadCards(): void {
     this.limit = Array.from({ length: this.section.limit }, (_, i) => i);
     this.loader = true;
     setTimeout(() => this.fetchCards(), 1500);
   }
 
-  fetchCards(): void {
+  private fetchCards(): void {
     this.sectionService.populateSectionCards(this.section).subscribe(
       (res) => {
         this.section = res;

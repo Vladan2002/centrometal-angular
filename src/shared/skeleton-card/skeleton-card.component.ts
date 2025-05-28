@@ -7,5 +7,5 @@ import {Component, Input} from '@angular/core';
   styleUrl: './skeleton-card.component.scss'
 })
 export class SkeletonCardComponent {
-  @Input() limit: any[]=[];
+  @Input() limit: number[]=[];
 }
