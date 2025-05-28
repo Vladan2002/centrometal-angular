@@ -1,0 +1,52 @@
+<div *ngFor="let section of sections">
+  <div class="container__products__shape">
+    <div class="container__products__shape__trapezoid container__products__shape__trapezoid--{{ section?.color || 'default' }}">
+      <p class="container__products__shape__text">
+        <i class="{{ section?.icon}}"></i>{{ section?.name }}
+      </p>
+    </div>
+  </div>
+
+  <div class="container__products__bar">
+    <div class="container__products__bar__discounts">
+
+      <ng-container *ngIf="!section?.cards?.length && !section?.loaded">
+        <div class="skeleton-loader" *ngFor="let i of [1, 2, 3, 4]">
+          <div class="skeleton__card">
+            <div class="skeleton skeleton--img"></div>
+            <div class="skeleton skeleton--badge"></div>
+            <div class="skeleton skeleton--name"></div>
+            <div class="skeleton skeleton--timer"></div>
+            <div class="skeleton skeleton--price"></div>
+            <div class="skeleton skeleton--price"></div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="!section?.cards?.length && section?.loaded">
+        <div class="no-products">
+          <h2>Nema proizvoda u ovoj sekciji</h2>
+          <p>
+            Trenutno nemamo proizvode koji odgovaraju sekciji
+            {{ section?.name}}. Pokušajte kasnije
+          </p>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="section?.cards?.length && section?.loaded">
+        <app-card
+          *ngFor="let card of section.cards"
+          [product]="card"
+        ></app-card>
+      </ng-container>
+
+    </div>
+
+    <button
+      *ngIf="section?.cards?.length && section?.loaded"
+      class="container__products__discounts__button container__products__discounts__button--{{ section?.color}}"
+    >
+      Pogledajte sve proizvode iz {{ section?.name}}
+    </button>
+  </div>
+</div>
