@@ -13,15 +13,15 @@
 <div class="main__left__description__info">
   <p class="main__left__description__info__text">Šifra artikla: {{productDescription[0].SKU}}</p>
 
-  <p *ngFor="let item of arr" class="main__left__description__info__text">{{ item }}</p>
+  <p *ngFor="let item of description" class="main__left__description__info__text">{{ item }}</p>
 </div>
 
 
   <div class="main__left__description__social">
     <p class="main__left__description__text">Količina: </p>
     <input class="main__left__description__input" type="text" id="quantity" value="1" readonly>
-    <button class="main__left__description__button" onclick="decreaseQuantity()">-</button>
-    <button class="main__left__description__button" onclick="increaseQuantity()">+</button>
+    <button class="main__left__description__button">-</button>
+    <button class="main__left__description__button">+</button>
     <span class="main__left__description__plus">+</span>
     <p class="main__left__description__text">Share:</p>
     <a href="" class="main__left__description__link"><i class="fa-brands fa-facebook-f main__left__description__icon"></i></a>
@@ -33,7 +33,3 @@
     <button class="main__left__button"><i class="fa-solid fa-cart-shopping main__left__button__icon"></i>Dodaj u korpu</button>
     <button class="main__left__button">Provjeri korpu</button>
   </div>
-
-
-
-

@@ -9,16 +9,17 @@
   <div class="main__left">
     <div class="main__left__content">
       <div class="main__left__content__slider" id="slider">
-      <app-product-slider-skeleton></app-product-slider-skeleton>
+      <app-product-slider-skeleton *ngIf="loading"></app-product-slider-skeleton>
       </div>
 
       <div class="main__left__description" id="description">
-        <app-product-description-skeleton></app-product-description-skeleton>
+        <app-product-description-skeleton *ngIf="loading"></app-product-description-skeleton>
+        <app-product-description *ngIf="productDescription && productData" [productData]="productData" [productDescription]="productDescription"></app-product-description>
       </div>
 
     </div>
     <div id="table">
-      tabela
+        <app-product-info *ngIf="productDescription" [productDescription]="productDescription"></app-product-info>
     </div>
 
     <div class="main__left__similar">

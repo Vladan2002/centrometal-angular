@@ -1,1 +1,73 @@
-<p>product-info works!</p>
+<div class="main__table">
+  <div class="main__table__tabs">
+    <button
+      class="main__table__tabs__button"
+      [class.main__table__tabs--active]="activeTab === 'proizvod'"
+      (click)="setTab('proizvod')">
+      PROIZVODNA LISTA
+    </button>
+    <button
+      class="main__table__tabs__button"
+      [class.main__table__tabs--active]="activeTab === 'uputstvo'"
+      (click)="setTab('uputstvo')">
+      UPUTSTVO ZA RUKOVANJE
+    </button>
+    <button
+      class="main__table__tabs__button"
+      [class.main__table__tabs--active]="activeTab === 'ocjena'"
+      (click)="setTab('ocjena')">
+      OCJENA
+    </button>
+    <button
+      class="main__table__tabs__button"
+      [class.main__table__tabs--active]="activeTab === 'email'"
+      (click)="setTab('email')">
+      E-MAIL
+    </button>
+  </div>
+
+  <div class="main__table__content main__table--active" *ngIf="activeTab === 'proizvod'">
+    <div class="main__table__content__info">
+      <div class="main__table__content__info__left">
+        <p *ngFor="let spec of productSpecsLeft">{{ spec }}</p>
+        <ng-container *ngIf="!productSpecsLeft.length">
+          <div class="skeleton skeleton-text" *ngFor="let s of [].constructor(7)"></div>
+        </ng-container>
+      </div>
+      <div class="main__table__content__info__right">
+        <p *ngFor="let spec of productSpecsRight">{{ spec }}</p>
+        <ng-container *ngIf="!productSpecsRight.length">
+          <div class="skeleton skeleton-text" *ngFor="let s of [].constructor(7)"></div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="main__table__content main__table--active" *ngIf="activeTab === 'uputstvo'">
+    <button class="main__table__content__button">
+      <a class="main__table__content__link" href="../../../assets/upustvo.pdf" target="_blank">Uputstvo</a>
+    </button>
+  </div>
+
+  <div class="main__table__content  main__table--active" *ngIf="activeTab === 'ocjena'">
+    <p>Ocijenite ovaj proizvod</p>
+    <span
+      class="fa fa-star"
+      *ngFor="let star of [1, 2, 3, 4, 5]"
+      [class.checked]="star <= tempStars"
+      (click)="rateStar(star)">
+    </span>
+
+    <form>
+      <button type="submit">Ocijeni proizvod</button>
+    </form>
+  </div>
+
+  <div class="main__table__content main__table--active" *ngIf="activeTab === 'email'">
+    <div class="main__table__content__container">
+      <input class="main__table__content__input" type="text" placeholder="E-mail adresa" />
+      <input class="main__table__content__input" type="text" placeholder="Naslov" />
+      <textarea class="main__table__content__textarea" placeholder="Unesi tekst"></textarea>
+    </div>
+  </div>
+</div>
