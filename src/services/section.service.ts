@@ -58,4 +58,30 @@ export class SectionsService {
       })
     );
   }
+
+
+  public getSimilarProducts(subcategoryId: number, excludeId: number): Observable<Product[]> {
+    const url = `${this.apiUrl}products?subcategory_id=${subcategoryId}&id_ne=${excludeId}&_limit=4`;
+
+    return forkJoin({
+      products: this.http.get<Product[]>(url).pipe(catchError(() => of([]))),
+      pictures: this.http.get<Picture[]>(this.apiUrl + "pictures").pipe(catchError(() => of([])))
+    }).pipe(
+      map(({ products, pictures }) =>
+        products.map(product => ({
+          ...product,
+          picture: [{
+            product_id: product.id,
+            url: pictures.find(pic => pic.product_id === product.id)?.url ||
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png'
+          }]
+        }))
+      ),
+      catchError(error => {
+        console.error('Error fetching similar products', error);
+        return of([]);
+      })
+    );
+  }
+
 }
