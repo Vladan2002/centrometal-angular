@@ -9,18 +9,19 @@ import {ActivatedRoute} from "@angular/router";
   styleUrl: './open-product.component.scss'
 })
 export class OpenProductComponent implements OnInit {
-  product: Product | null = null;
-  loader: boolean = true;
-  id:number = -1;
+  public product!: Product;
+  public loader: boolean = true;
+  public id:number = -1;
   constructor(private openProductService: OpenProductService,private route: ActivatedRoute
   ) {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
   ngOnInit() {
-    this.fetchData()
+
+    setTimeout(()=>this.fetchData(),2000)
+
   }
   private fetchData(){
-    this.loader = true;
     this.openProductService.getData(this.id).subscribe(data=>{
       this.product = data;
       this.loader = false;

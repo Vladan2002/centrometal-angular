@@ -5,7 +5,7 @@ export interface Product {
   discount: number;
   subcategory_id:number;
   price: number;
-  picture: Picture[];
+  picture?: Picture[];
 }
 
 export interface Picture {

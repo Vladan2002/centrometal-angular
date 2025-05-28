@@ -8,21 +8,21 @@ import {Picture} from '../products.interface';
   styleUrl: './product-slider.component.scss'
 })
 export class ProductSliderComponent {
-  @Input() pictures: Picture[] = [];
-  activeIndex = 0;
+  @Input() public pictures: Picture[] = [];
+  public activeIndex:number = 0;
 
-  prev() {
+  public prev() {
     if (this.pictures.length) {
       this.activeIndex = (this.activeIndex - 1 + this.pictures.length) % this.pictures.length;
     }
   }
-  next() {
+  public next() {
     if (this.pictures.length) {
       this.activeIndex = (this.activeIndex + 1) % this.pictures.length;
     }
   }
 
-  setActive(index: number) {
+  public setActive(index: number) {
     this.activeIndex = index;
   }
 }

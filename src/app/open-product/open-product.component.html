@@ -7,7 +7,7 @@
     <div class="main__left__content">
       <div class="main__left__slider">
       <app-product-slider-skeleton *ngIf="loader"></app-product-slider-skeleton>
-        <app-product-slider *ngIf="product" [pictures]="product.picture"></app-product-slider>
+        <app-product-slider *ngIf="product && product.picture" [pictures]="product.picture"></app-product-slider>
       </div>
       <div class="main__left__description" id="description">
         <app-product-description-skeleton *ngIf="loader"></app-product-description-skeleton>
