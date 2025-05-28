@@ -7,12 +7,12 @@ import {CategoryNode} from './interfaces/accordion.interface';
   styleUrl: './accordion.component.scss'
 })
 export class AccordionComponent{
-  @Input() accordion!: CategoryNode;
-  @Input() isActive = true;
+  @Input() public accordion!: CategoryNode;
+  @Input() public isActive = true;
 
-  expanded = false;
+  public expanded = false;
 
-  toggle(): void {
+  public toggle(): void {
     this.expanded = !this.expanded;
   }
 }

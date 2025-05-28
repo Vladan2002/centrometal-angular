@@ -13,15 +13,15 @@ export class SideComponent implements OnInit {
   public accordion: CategoryNode[] = [];
   constructor(private accordionService: AccordionService) {}
 
-  toggleMenu(): void {
+  public toggleMenu(): void {
     this.isActive = !this.isActive;
   }
-  fetchData(): void {
+  private fetchData(): void {
     this.accordionService.getAccordionData().subscribe((data) => {
       this.accordion = data;
     })
   }
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.fetchData();
   }
 }
