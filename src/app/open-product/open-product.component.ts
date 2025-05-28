@@ -15,18 +15,18 @@ export class OpenProductComponent implements OnInit {
   productData: Product | null =null;
   productDescription: ProductDescription | null =null;
   loading = true;
-  id: number = -1;
+  id: number = 1;
 
   constructor(
       private dataService: OpenProductService,
-    private route: ActivatedRoute
+    //private route: ActivatedRoute
   ) {
-   this.id = Number(this.route.snapshot.paramMap.get('id'));
+  // this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
 
   ngOnInit(): void {
 
-    setTimeout(() => this.loadContent(), 5000);
+    setTimeout(() => this.loadContent(), 50000);
 
   }
 
