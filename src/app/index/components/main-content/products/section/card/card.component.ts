@@ -8,5 +8,5 @@ import{Product} from "../../interfaces/products.interface";
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input() product!: Product;
+  @Input() public product!: Product;
 }

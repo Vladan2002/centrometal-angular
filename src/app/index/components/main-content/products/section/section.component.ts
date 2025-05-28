@@ -9,7 +9,7 @@ import {SectionsService} from '../../../../../../services/section.service';
   styleUrl: './section.component.scss'
 })
 export class SectionComponent implements OnInit {
-  @Input() section!: Section;
+  @Input() public section!: Section;
   public limit:number[]=[];
   public loader:boolean = false;
 

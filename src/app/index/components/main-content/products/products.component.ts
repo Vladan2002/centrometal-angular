@@ -9,7 +9,7 @@ import{Section} from "./interfaces/products.interface";
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  sections: Section[] = [];
+  public sections: Section[] = [];
 
   constructor(private sectionsService: SectionsService) {}
 
