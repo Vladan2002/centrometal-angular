@@ -15,6 +15,8 @@ import {ProductDescription} from './product-description.interface';
 import {SectionsService} from "../../services/section.service";
 import {CardModule} from "../index/components/main-content/products/section/card/card.module";
 import {SkeletonCardModule} from "../index/components/main-content/products/skeleton-card/skeleton-card.module";
+import {NewsletterModule} from '../newsletter/newsletter.module';
+import {ProductSideModule} from '../product-side/product-side.module';
 
 @Component({
   selector: 'app-open-product',
@@ -31,7 +33,9 @@ import {SkeletonCardModule} from "../index/components/main-content/products/skel
     ProductSliderSkeletonComponent,
     CardModule,
     NgForOf,
-    SkeletonCardModule
+    SkeletonCardModule,
+    NewsletterModule,
+    ProductSideModule
   ]
 })
 export class OpenProductComponent implements OnInit {
@@ -49,13 +53,22 @@ export class OpenProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = Number(params.get('id'));
+      if (id) {
+        this.productData=null
+        this.array=[];
+        this.productDescription=null;
+        this.similar=null;
+        this.loading=true;
 
-    setTimeout(() => this.loadContent(), 5000);
-
+        setTimeout(()=>{this.loadContent(id)},2000)
+      }
+    });
   }
 
-  loadContent(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+
+  loadContent(id:number): void {
     this.loading = true;
 
     this.dataService.getData(id).subscribe(data => {

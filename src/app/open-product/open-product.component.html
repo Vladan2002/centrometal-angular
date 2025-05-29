@@ -22,7 +22,7 @@
       </div>
     </div>
     <div id="table">
-<app-product-table [productDescription]="productDescription"></app-product-table>
+<app-product-table *ngIf="!loading" [productDescription]="productDescription"></app-product-table>
     </div>
 
     <div class="main__left__similar">
@@ -42,7 +42,7 @@
   </div>
 
   <div class="main__right" id="right-sidebar">
-    <app-side-bar></app-side-bar>
+<app-product-side></app-product-side>
   </div>
 
 
