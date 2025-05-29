@@ -27,8 +27,6 @@
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
-    }
-
 
       &__slider {
         position: relative;
@@ -38,9 +36,9 @@
         min-height: 250px;
       }
 
-
-    &__description {
-      padding-left: 5%;
+      &__description {
+        padding-left: 5%;
+      }
     }
 
     &__similar {

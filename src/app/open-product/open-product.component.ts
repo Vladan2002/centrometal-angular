@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './products.interface';
+import { ProductDescription } from './product-description.interface';
 import { OpenProductService } from '../../services/open-product.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,9 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class OpenProductComponent implements OnInit {
 
-  public loader: boolean = true;
   public productData!: Product;
+  public productDescription: ProductDescription[] = [];
   public products: Product[] = [];
+  public loader: boolean = true;
   public limit: number[] = [1, 2, 3, 4];
   private id: number = -1;
 
@@ -24,10 +26,8 @@ export class OpenProductComponent implements OnInit {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
 
-  public ngOnInit() {
-    setTimeout(() => {
-      this.fetchProductData();
-    }, 1000);
+  public ngOnInit(): void {
+    setTimeout(() => this.fetchProductData(), 1000);
   }
 
   private fetchProductData(): void {
@@ -43,6 +43,8 @@ export class OpenProductComponent implements OnInit {
 
         this.productData = data;
         console.log('Product data:', this.productData);
+
+        this.fetchProductDescription();
         this.fetchSimilarProducts();
       },
       error: (err) => {
@@ -50,6 +52,16 @@ export class OpenProductComponent implements OnInit {
         this.loader = false;
       }
     });
+  }
+
+  private fetchProductDescription(): void {
+    if (this.productData?.id) {
+      this.dataService.getDescription(this.productData.id).subscribe(desc => {
+        this.productDescription = desc;
+      });
+    } else {
+      console.warn('Missing product ID for description fetch');
+    }
   }
 
   private fetchSimilarProducts(): void {
