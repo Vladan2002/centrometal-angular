@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CategoryNode} from './accordion/interfaces/accordion.interface';
-import {AccordionService} from '../../../services/accordion.service';
+import {AccordionService} from '../../../../services/accordion.service';
 
 @Component({
   selector: 'app-side',

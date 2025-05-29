@@ -6,12 +6,10 @@ import {SideBarModule} from './side-bar/side-bar.module';
 
 @NgModule({
   imports: [
-    SideBarModule
+    SideBarModule,
+      AccordionModule,
+      CommonModule
   ],
-    imports: [
-        AccordionModule,
-        CommonModule
-    ],
   declarations: [SideComponent],
   exports: [SideComponent]
 })
