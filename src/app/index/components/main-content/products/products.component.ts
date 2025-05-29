@@ -9,7 +9,7 @@ import{Section} from "./interfaces/products.interface";
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  sections: Section[] = [];
+  public sections: Section[] = [];
 
   constructor(private sectionsService: SectionsService) {}
 
@@ -20,18 +20,6 @@ export class ProductsComponent implements OnInit {
   private loadContent():void {
   this.sectionsService.getSections().subscribe(sections => {
   this.sections = sections;
-  setTimeout(() => {
-  this.loadCardsSequentially(0);
-}, 5000);
 });
 }
-
-  private loadCardsSequentially(index: number) {
-    if (index >= this.sections.length) return;
-    this.sectionsService.populateSectionCards(this.sections[index]).subscribe(updatedSection => {
-      this.sections[index] = updatedSection;
-      console.log(this.sections[index]);
-      setTimeout(() => this.loadCardsSequentially(index + 1), 1500);
-    });
-  }
 }
