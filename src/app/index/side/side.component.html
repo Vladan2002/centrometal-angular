@@ -1,0 +1,24 @@
+<div class="container__side__menu" id="menu">
+
+  <button class="container__side__menu__button"   (click)="toggleMenu()">
+
+    <img
+      class="container__side__menu__button__img"
+      src="../../../assets/grid.png"
+      alt=""
+    />
+    <p class="container__side__menu__text container__side__menu__text__case">
+      Kupuj po kategoriji
+    </p>
+  </button>
+
+  <ng-container *ngIf="accordion">
+  <ng-container *ngFor="let item of accordion">
+    <app-accordion
+      [accordion]="item"
+      [isActive]="isActive"
+    ></app-accordion>
+  </ng-container>
+  </ng-container>
+</div>
+
