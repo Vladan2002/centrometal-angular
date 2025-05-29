@@ -1,30 +1,35 @@
-import {Component, OnInit} from '@angular/core';
-import {OpenProductService} from '../../services/open-product.service';
-import {Product} from './products.interface';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Product } from './products.interface';
+import { OpenProductService } from '../../services/open-product.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-open-product',
-  standalone:false,
+  standalone: false,
   templateUrl: './open-product.component.html',
-  styleUrl: './open-product.component.scss'
+  styleUrls: ['./open-product.component.scss']
 })
-export class OpenProductComponent implements OnInit{
+export class OpenProductComponent implements OnInit {
 
-  public loader:boolean = true;
-  public products:Product[]=[];
-  public productData!:Product;
-  private id:number=-1;
-  public limit:number[]=[1,2,3,4];
+  public loader: boolean = true;
+  public productData!: Product;
+  public products: Product[] = [];
+  public limit: number[] = [1, 2, 3, 4];
+  private id: number = -1;
+
   constructor(
     private dataService: OpenProductService,
     private route: ActivatedRoute
   ) {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
-  public ngOnInit(){
-    setTimeout(()=>{this.fetchProductData()},1000)
+
+  public ngOnInit() {
+    setTimeout(() => {
+      this.fetchProductData();
+    }, 1000);
   }
+
   private fetchProductData(): void {
     this.loader = true;
 
@@ -67,6 +72,4 @@ export class OpenProductComponent implements OnInit{
       this.loader = false;
     }
   }
-
-
 }
