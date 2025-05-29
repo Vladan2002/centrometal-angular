@@ -15,7 +15,7 @@ import {ProductDescription} from './product-description.interface';
 import {SectionsService} from "../../services/section.service";
 import {CardModule} from "../index/components/main-content/products/section/card/card.module";
 import {SkeletonCardModule} from "../index/components/main-content/products/skeleton-card/skeleton-card.module";
-import {NewsletterModule} from '../newsletter/newsletter.module';
+import {NewsletterModule} from '../product-side/newsletter/newsletter.module';
 import {ProductSideModule} from '../product-side/product-side.module';
 
 @Component({
