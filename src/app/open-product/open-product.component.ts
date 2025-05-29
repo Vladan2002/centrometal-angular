@@ -16,7 +16,7 @@ export class OpenProductComponent implements OnInit {
   ) {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
-  ngOnInit() {
+  public ngOnInit() {
 
     setTimeout(()=>this.fetchData(),2000)
 

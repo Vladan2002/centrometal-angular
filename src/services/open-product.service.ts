@@ -11,7 +11,7 @@ export class OpenProductService {
 
   constructor(private http: HttpClient) {
   }
-  getData(id: number): Observable<Product> {
+  public getData(id: number): Observable<Product> {
     return forkJoin({
       product: this.http.get<Product>(`${this.apiUrl}/products/${id}`),
       pictures: this.http.get<Picture[]>(`${this.apiUrl}/pictures?product_id=${id}`).pipe(
