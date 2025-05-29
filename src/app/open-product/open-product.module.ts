@@ -6,13 +6,20 @@ import {ProductDescriptionSkeletonModule} from './components/loaders/product-des
 import {CardModule} from './components/card/card.module';
 import {SkeletonCardModule} from './components/loaders/skeleton-card/skeleton-card.module';
 import {NoProductsModule} from './components/no-products/no-products.module';
+import {ProductSideModule} from './components/product-side/product-side.module';
 
 @NgModule({
   declarations: [ OpenProductComponent ],
-  imports: [CommonModule, ProductSliderSkeletonModule, ProductDescriptionSkeletonModule, CardModule, SkeletonCardModule, NoProductsModule],
-  providers:[],
+  imports: [
+    CommonModule,
+    ProductSliderSkeletonModule,
+    ProductDescriptionSkeletonModule,
+    CardModule,
+    SkeletonCardModule,
+    NoProductsModule,
+    ProductSideModule
+  ],
+  providers: [],
   exports: [ OpenProductComponent ]
 })
-export class OpenProductModule {
-
-}
+export class OpenProductModule {}

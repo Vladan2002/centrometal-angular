@@ -1,0 +1,44 @@
+.main{
+  &__right{
+    &__button-blue{
+      width:50%;
+      height: 30px;
+      border: none;
+      background-color: #00A9EA;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 0 10px;
+      min-width: 70px;
+      word-wrap: break-word;
+      cursor: pointer;
+      max-width: 200px;
+      &:hover{
+        transform:scale(1.05);
+      }
+    }
+
+    &__newsletter{
+      width: 90%;
+      padding: 15px 5%;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: white !important;
+      background-color: #005474;
+      &__input{
+        width: 100%;
+        border: none;
+        margin-bottom: 10px;
+        background-color: transparent;
+        border-bottom: 2px solid #00A9EA;
+        padding: 10px 0 ;
+        color: white !important;
+        &::placeholder{
+          color: white;
+        }
+      }
+    }
+  }
+}
