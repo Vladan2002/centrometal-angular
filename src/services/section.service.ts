@@ -12,7 +12,7 @@ export class SectionsService {
   private apiUrl = 'http://localhost:3000/';
 
   constructor(private http: HttpClient) {}
-  getSections(): Observable<Section[]> {
+  public getSections(): Observable<Section[]> {
     return this.http.get<Section[]>(this.apiUrl+"sections").pipe(
       map(sections => sections.map(section => ({
         name: section.name,
@@ -31,7 +31,7 @@ export class SectionsService {
       })
     );
   }
-  populateSectionCards(section: Section): Observable<Section> {
+  public populateSectionCards(section: Section): Observable<Section> {
         let url=`${this.apiUrl}products?discount_gte=${section.gte}&_limit=${section.limit}`;
     return forkJoin({
       products: this.http.get<Product[]>(url).pipe(catchError(() => of([]))),

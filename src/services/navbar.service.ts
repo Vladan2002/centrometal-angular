@@ -11,7 +11,7 @@ export class NavbarService {
 
   constructor(private http: HttpClient) {}
 
-  getNavbarData(): Observable<{ navbar: Section[] }> {
+  public getNavbarData(): Observable<{ navbar: Section[] }> {
     return this.http.get<{ navbar: Section[] }>(this.apiUrl);
   }
 

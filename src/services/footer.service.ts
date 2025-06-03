@@ -12,7 +12,7 @@ export class FooterService {
 
   constructor(private http: HttpClient) {}
 
-  getFooterData(): Observable<Footer> {
+  public getFooterData(): Observable<Footer> {
     return this.http.get<Footer>(this.apiUrl).pipe(
       catchError(this.handleError)
     );

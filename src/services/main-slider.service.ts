@@ -16,7 +16,7 @@ export class MainSliderService {
   ) {
     this.apiUrl = this.apiService.getBaseUrl() + '/slider';
   }
-  getImages(): Observable<SliderData> {
+  public getImages(): Observable<SliderData> {
     return this.http.get<SliderData>(this.apiUrl);
   }
 }
