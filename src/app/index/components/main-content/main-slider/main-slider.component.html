@@ -1,0 +1,43 @@
+<div class="container__products__slider__show">
+  <div
+    class="container__products__slider__show__track"
+    [style.transform]="'translateX(-' + activeIndex * 100 + '%)'"
+  >
+    <div
+      class="container__products__slider__show__slides"
+      *ngFor="let slide of slides?.pictures"
+    >
+      <img
+        class="container__products__slider__show__img"
+        [src]="slide" alt=""
+      />
+    </div>
+  </div>
+
+  <button
+    class="container__products__slider__show__controls container__products__slider__show__controls--previous"
+    (click)="prevSlide()"
+  ><
+  </button>
+  <button
+    class="container__products__slider__show__controls container__products__slider__show__controls--next"
+    (click)="nextSlide()"
+  >>
+  </button>
+
+  <div class="container__products__slider__pager">
+    <a
+      *ngFor="let slide of slides?.pictures; let i = index"
+      class="container__products__slider__pager__text"
+      [ngClass]="{ 'container__products__slider__pager__text--active': i === activeIndex }"
+      (click)="goToSlide(i)"
+    >{{i+1}}</a>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-container__percentage" [style.width.%]="(100 / slides.pictures.length) * (activeIndex + 1)"></div>
+    <div class="progress-container__background"></div>
+  </div>
+</div>
+
+
