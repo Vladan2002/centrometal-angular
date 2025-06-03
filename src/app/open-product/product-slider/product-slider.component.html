@@ -1,0 +1,22 @@
+
+<div class="main__left__content__slider__container">
+  <img class="main__left__content__slider__img" [src]="pictures[activeIndex].url" alt="Main image" />
+</div>
+
+<div class="main__left__content__slider__pager">
+  <button class="main__left__content__slider__controls" (click)="prev()">❮</button>
+  <div class="main__left__content__slider__pager">
+    <div class="main__left__content__slider__pager__container">
+      <img
+        *ngFor="let img of pictures; let i = index"
+        [class.main__left__content__slider__thumbnail--active]="i === activeIndex"
+        class="main__left__content__slider__thumbnail"
+        [src]="img.url"
+        alt="Thumbnail"
+        (click)="setActive(i)"
+      />
+    </div>
+  </div>
+  <button class="main__left__content__slider__controls" (click)="next()">❯</button>
+</div>
+

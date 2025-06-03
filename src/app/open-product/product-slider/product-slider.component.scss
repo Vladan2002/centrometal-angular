@@ -1,0 +1,60 @@
+.main {
+  &__left {
+    &__content {
+      &__slider {
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        margin: auto;
+        min-height: 250px;
+
+        &__container {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+        }
+
+        &__img {
+          aspect-ratio: 1/1;
+          height: 300px;
+        }
+
+        &__pager {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+
+          &__container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+        }
+
+        &__controls {
+          border: none;
+          font-size: 2rem;
+          background: none;
+          cursor: pointer;
+          &:hover {
+            color: red;
+          }
+        }
+
+        &__thumbnail {
+          width: 50px;
+          height: 50px;
+          cursor: pointer;
+          border: 1px solid transparent;
+          &:hover {
+            border: 1px solid red;
+          }
+
+          &--active {
+            border: 1px solid red;
+          }
+        }
+      }
+    }
+  }
+}

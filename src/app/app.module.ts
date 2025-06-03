@@ -6,6 +6,7 @@ import { NavbarModule } from '../shared/navbar/navbar.module';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { NavbarService } from '../services/navbar.service';
 import {IndexModule} from './index/index.module';
+import {OpenProductModule} from './open-product/open-product.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {IndexModule} from './index/index.module';
     BrowserModule,
     NavbarModule,
     HttpClientModule,
-    IndexModule
+    IndexModule,
+    OpenProductModule
   ],
   providers: [NavbarService],
   bootstrap: [AppComponent]

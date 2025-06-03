@@ -1,0 +1,50 @@
+<div class="page-navigation">
+  <span class="page-navigation__text">Naslovna /</span>
+  <span class="page-navigation__text">Proizvodi /</span>
+  <span class="page-navigation__text">grupa robe</span>
+</div>
+
+<div class="main">
+  <div class="main__left">
+    <div class="main__left__content">
+      <div class="main__left__slider" id="slider">
+        <app-product-slider-skeleton *ngIf="loader"></app-product-slider-skeleton>
+        <app-product-slider *ngIf="productData && productData.picture" [pictures]="productData.picture"></app-product-slider>
+      </div>
+
+      <div class="main__left__description" id="description">
+        <app-product-description-skeleton *ngIf="loader"></app-product-description-skeleton>
+        <app-product-description
+          *ngIf="productDescription?.length && productData"
+          [productData]="productData"
+          [productDescription]="productDescription">
+        </app-product-description>
+      </div>
+    </div>
+
+    <div id="table">
+      <app-product-info [productDescription]="productDescription"></app-product-info>
+    </div>
+
+    <div class="main__left__similar">
+      <span class="main__left__similar__text">Slični proizvodi</span>
+      <div class="main__left__similar__line"></div>
+    </div>
+
+    <div class="container__products__discounts">
+      <div class="container__products__bar" id="discounts-bar">
+        <ng-container *ngIf="products">
+          <app-card *ngFor="let item of products" [product]="item"></app-card>
+        </ng-container>
+        <ng-container *ngIf="loader">
+          <app-skeleton-card [limit]="limit"></app-skeleton-card>
+        </ng-container>
+        <app-no-products *ngIf="!loader && !products?.length"></app-no-products>
+      </div>
+    </div>
+  </div>
+
+  <div class="main__right" id="right-sidebar">
+    <app-product-side></app-product-side>
+  </div>
+</div>
