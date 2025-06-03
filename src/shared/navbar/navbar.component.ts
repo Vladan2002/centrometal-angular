@@ -10,22 +10,22 @@ import {Section} from './interfaces/navbar.interface';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  navbarItems: Section[] | undefined;
-  isMenuActive: boolean = false;
+  public navbarItems: Section[] | undefined;
+  public isMenuActive: boolean = false;
 
   constructor(private navbarService: NavbarService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.fetchData()
   }
-  fetchData(): void {
+  public fetchData(): void {
     this.navbarService.getNavbarData().subscribe(data => {
       this.navbarItems = data.navbar;
       console.log(this.navbarItems);
     });
   }
 
-  toggleMenu(): void {
+  public toggleMenu(): void {
     this.isMenuActive = !this.isMenuActive;
   }
 }

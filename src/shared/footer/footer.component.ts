@@ -10,18 +10,18 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  footerData: Footer = {
+  public footerData: Footer = {
       footer: [],
       copyright: { text: '', link: '', href: '' }
   };
 
   constructor(private footerService: FooterService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.fetchFooterData();
   }
 
-  fetchFooterData(): void {
+  private fetchFooterData(): void {
     this.footerService.getFooterData().pipe(
       map((data) => this.mapFooterData(data))
     ).subscribe({

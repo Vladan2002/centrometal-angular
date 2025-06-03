@@ -13,7 +13,7 @@ export class AccordionService {
   constructor(private http: HttpClient) {
   }
 
-  getAccordionData(): Observable<CategoryNode[]> {
+  public getAccordionData(): Observable<CategoryNode[]> {
     return this.http.get<{ accordion: CategoryNode[] }>(this.apiUrl + '/accordion')
       .pipe(map(response => response.accordion));
   }
