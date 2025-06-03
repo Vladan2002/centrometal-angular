@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Section} from '../app/navbar/interfaces/navbar.interface';
+import {Section} from '../shared/navbar/interfaces/navbar.interface';
 
 @Injectable({
   providedIn: 'root'

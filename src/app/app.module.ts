@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { NavbarModule } from './navbar/navbar.module';
-import { FooterComponent } from './footer/footer.component';
+import { NavbarModule } from '../shared/navbar/navbar.module';
+import { FooterComponent } from '../shared/footer/footer.component';
 import { NavbarService } from '../services/navbar.service';
 
 @NgModule({
@@ -13,10 +13,10 @@ import { NavbarService } from '../services/navbar.service';
   ],
   imports: [
     BrowserModule,
-    NavbarModule,  
+    NavbarModule,
     HttpClientModule
   ],
-  providers: [NavbarService], 
+  providers: [NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
