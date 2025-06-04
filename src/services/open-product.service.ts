@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin, Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import {ApiService} from '../services/api.service';
+import {ApiService} from './api.service';
 import { Product, Picture } from '../app/open-product/products.interface';
 import { ProductDescription } from '../app/open-product/product-description.interface';
 
