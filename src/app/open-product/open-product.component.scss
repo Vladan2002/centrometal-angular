@@ -69,3 +69,26 @@
     gap: 40px;
   }
 }
+
+@media (max-width: 1230px){
+  .main{
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+
+    &__left {
+      width: 100%;
+      &__content {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+      &__slider {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    &__right {
+      width: 100%;
+    }
+  }
+}

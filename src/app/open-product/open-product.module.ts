@@ -5,7 +5,7 @@ import { OpenProductService } from '../../services/open-product.service';
 import { ProductSliderSkeletonModule } from './components/loaders/product-slider-skeleton/product-slider-skeleton.module';
 import { ProductDescriptionSkeletonModule } from './components/loaders/product-description-skeleton/product-description-skeleton.module';
 import { SkeletonCardModule } from './components/loaders/skeleton-card/skeleton-card.module';
-import { ProductSliderModule } from './product-slider/product-slider.module';
+import { ProductSliderModule } from './components/product-slider/product-slider.module';
 import { ProductDescriptionModule } from './components/product-description/product-description.module';
 import { ProductInfoComponentModule } from './components/product-info/product-info.module';
 import { CardModule } from './components/card/card.module';
