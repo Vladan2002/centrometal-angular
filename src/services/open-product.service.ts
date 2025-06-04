@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin, Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-
+import {ApiService} from '../services/api.service';
 import { Product, Picture } from '../app/open-product/products.interface';
 import { ProductDescription } from '../app/open-product/product-description.interface';
 
@@ -10,9 +10,11 @@ import { ProductDescription } from '../app/open-product/product-description.inte
   providedIn: 'root'
 })
 export class OpenProductService {
-  private apiUrl: string = 'http://localhost:3000';
+  private apiUrl = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private apiService: ApiService) {
+    this.apiUrl = this.apiService.getBaseUrl();
+  }
 
   public getData(id: number): Observable<Product> {
     return forkJoin({

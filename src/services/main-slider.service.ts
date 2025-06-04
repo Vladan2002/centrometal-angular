@@ -9,7 +9,7 @@ import {ApiService} from "./api.service";
 )
 export class MainSliderService {
 
-  private apiUrl: string;
+  private apiUrl="";
   constructor(
       private http: HttpClient,
       private apiService: ApiService

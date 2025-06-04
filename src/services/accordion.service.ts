@@ -3,14 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable,  } from 'rxjs';
 import {map} from 'rxjs/operators';
 import {CategoryNode} from '../app/index/components/side/accordion/interfaces/accordion.interface';
+import {ApiService} from "./api.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccordionService {
-  private apiUrl: string="http://localhost:3000";
+  private apiUrl: string="";
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private apiService: ApiService) {
+    this.apiUrl=this.apiService.getBaseUrl()
   }
 
   public getAccordionData(): Observable<CategoryNode[]> {
