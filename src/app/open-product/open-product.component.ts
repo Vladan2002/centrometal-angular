@@ -21,9 +21,9 @@ export class OpenProductComponent implements OnInit {
 
   constructor(
     private dataService: OpenProductService,
-    //private route: ActivatedRoute
+    private route: ActivatedRoute
   ) {
-    //this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
 
   public ngOnInit(): void {

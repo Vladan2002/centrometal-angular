@@ -11,6 +11,7 @@ import { ProductInfoComponentModule } from './components/product-info/product-in
 import { CardModule } from './components/card/card.module';
 import { NoProductsModule } from './components/no-products/no-products.module';
 import { ProductSideModule } from './components/product-side/product-side.module';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [OpenProductComponent],
@@ -24,7 +25,8 @@ import { ProductSideModule } from './components/product-side/product-side.module
     CardModule,
     SkeletonCardModule,
     NoProductsModule,
-    ProductSideModule
+    ProductSideModule,
+      RouterModule.forChild([{ path: ':id', component: OpenProductComponent }])
   ],
   providers: [OpenProductService],
   exports: [OpenProductComponent]
