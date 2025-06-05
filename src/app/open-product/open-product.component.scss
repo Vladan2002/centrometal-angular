@@ -14,6 +14,17 @@
   }
 }
 
+.container{
+  &__products{
+    &__bar{
+      display: flex;
+      gap: 70px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
 .main {
   width: 74%;
   display: flex;

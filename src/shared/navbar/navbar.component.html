@@ -40,7 +40,7 @@
   <div class="navbar__small">
     <div class="navbar__trapezoid-left"></div>
     <div class="navbar__small__select" id="select-menu" [ngClass]="{'navbar__small__select--active': isMenuActive}">
-      <a class="navbar__small__select__button" *ngFor="let item of navbarItems" >
+      <a class="navbar__small__select__button" *ngFor="let item of navbarItems" [routerLink]="item.path" >
         <i *ngIf="item.icon" [class]="item.icon + ' navbar__small__select__icon'"></i>
         {{ item.label }}
       </a>

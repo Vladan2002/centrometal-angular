@@ -16,13 +16,16 @@
 @media (max-width:1230px){
   .no-products {
     display: flex;
-    flex-direction: column;
+    padding:0;
+    width: 90%;
+    margin: auto;
     align-items: center;
     justify-content: center;
     background-color: #f8f9fa;
     border: 1px dashed #ced4da;
     border-radius: 8px;
     text-align: center;
+    white-space: wrap;
     color: #495057;
     font-family: Arial, sans-serif;
   }

@@ -9,12 +9,12 @@ import {SliderData} from './interfaces/main-slider.interface';
   styleUrls: ['./main-slider.component.scss']
 })
 export class MainSliderComponent implements OnInit {
- public  slides: SliderData = { pictures: [] };
- public  activeIndex: number = 0;
+  slides: SliderData = { pictures: [] };
+  activeIndex: number = 0;
 
   constructor(private service: MainSliderService) {}
 
- public ngOnInit(): void {
+  ngOnInit(): void {
     this.loadSlides();
   }
 
@@ -29,13 +29,13 @@ export class MainSliderComponent implements OnInit {
     });
   }
 
-  public nextSlide(): void {
+  nextSlide(): void {
     if (this.slides.pictures.length > 0) {
       this.activeIndex = (this.activeIndex + 1) % this.slides.pictures.length;
     }
   }
 
- public prevSlide(): void {
+  prevSlide(): void {
     if (this.slides.pictures.length > 0) {
       this.activeIndex =
         (this.activeIndex - 1 + this.slides.pictures.length) %
@@ -43,7 +43,7 @@ export class MainSliderComponent implements OnInit {
     }
   }
 
- public goToSlide(index: number): void {
+  goToSlide(index: number): void {
     this.activeIndex = index;
   }
 }

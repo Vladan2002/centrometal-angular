@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {ProductDescription} from '../../product-description.interface';
+import {ProductDescription} from '../../interfaces/product-description.interface';
 
 @Component({
   selector: 'app-product-info',

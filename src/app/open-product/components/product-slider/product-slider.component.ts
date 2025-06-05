@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Picture} from '../../products.interface';
+import {Picture} from '../../../index/components/main-content/products/interfaces/products.interface';
 
 @Component({
   selector: 'app-product-slider',
