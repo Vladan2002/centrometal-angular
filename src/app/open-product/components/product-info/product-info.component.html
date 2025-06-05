@@ -36,7 +36,7 @@
       </div>
       <div class="main__table__content__info__right">
         <p *ngFor="let spec of productSpecsRight">{{ spec }}</p>
-        <ng-container *ngIf="!productSpecsRight.length">
+        <ng-container *ngIf="!productSpecsRight.length && !productSpecsLeft.length">
           <div class="skeleton skeleton--text" *ngFor="let s of limit"></div>
         </ng-container>
       </div>

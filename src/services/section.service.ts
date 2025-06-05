@@ -34,30 +34,6 @@ export class SectionsService {
       })
     );
   }
-/*  public apopulateSectionCards(section: Section): Observable<Section> {
-        let url=`${this.apiUrl}/products?discount_gte=${section.gte}&_limit=${section.limit}`;
-    return forkJoin({
-      products: this.http.get<Product[]>(url).pipe(catchError(() => of([]))),
-      pictures: this.http.get<Picture[]>(this.apiUrl+"/pictures").pipe(catchError(() => of([])))
-    }).pipe(
-      map(({ products, pictures }) => ({
-        ...section,
-        loaded: true,
-        cards: products
-          .map(product => ({
-            ...product,
-            picture: {
-              product_id: product.id,
-              url: pictures.find(pic => pic.product_id === product.id)?.url || 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png'
-            }
-          }))
-      })),
-      catchError(error => {
-        console.error(`Error populating cards for section`, error);
-        return of({ ...section, cards: [] });
-      })
-    );
-  }*/
 
 
     public populateSectionCards(section: Section): Observable<Section> {
