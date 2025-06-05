@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-index',
@@ -6,8 +6,6 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './index.component.html',
   styleUrl: './index.component.scss'
 })
-export class IndexComponent implements OnInit {
-  ngOnInit() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+export class IndexComponent {
+
 }
