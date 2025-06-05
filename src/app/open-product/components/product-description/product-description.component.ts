@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Product} from '../../products.interface';
-import {ProductDescription} from '../../product-description.interface';
+import {Product} from "../../../index/components/main-content/products/interfaces/products.interface"
+import {ProductDescription} from '../../interfaces/product-description.interface';
 
 @Component({
   selector: 'app-product-description',

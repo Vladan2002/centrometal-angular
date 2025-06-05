@@ -17,7 +17,6 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     FooterModule,
     AppRoutingModule
-
   ],
   providers: [NavbarService],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@
   <header class="navbar__header">
     <div class="navbar__header__container">
       <div class="navbar__header__left">
-        <div class="navbar__header__left__logo">
+        <div class="navbar__header__left__logo" [routerLink]="'/'">
           <span class="navbar__header__left__text">CENTRO</span><span class="navbar__header__left__text">METAL</span>
         </div>
       </div>
@@ -40,7 +40,7 @@
   <div class="navbar__small">
     <div class="navbar__trapezoid-left"></div>
     <div class="navbar__small__select" id="select-menu" [ngClass]="{'navbar__small__select--active': isMenuActive}">
-      <a class="navbar__small__select__button" *ngFor="let item of navbarItems" >
+      <a class="navbar__small__select__button" *ngFor="let item of navbarItems" [routerLink]="item.path" >
         <i *ngIf="item.icon" [class]="item.icon + ' navbar__small__select__icon'"></i>
         {{ item.label }}
       </a>

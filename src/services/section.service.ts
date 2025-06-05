@@ -34,7 +34,7 @@ export class SectionsService {
       })
     );
   }
-  public populateSectionCards(section: Section): Observable<Section> {
+/*  public apopulateSectionCards(section: Section): Observable<Section> {
         let url=`${this.apiUrl}/products?discount_gte=${section.gte}&_limit=${section.limit}`;
     return forkJoin({
       products: this.http.get<Product[]>(url).pipe(catchError(() => of([]))),
@@ -57,6 +57,38 @@ export class SectionsService {
         return of({ ...section, cards: [] });
       })
     );
-  }
+  }*/
+
+
+    public populateSectionCards(section: Section): Observable<Section> {
+        let url = `${this.apiUrl}/products?discount_gte=${section.gte}&_limit=${section.limit}`;
+
+        return forkJoin({
+            products: this.http.get<Product[]>(url).pipe(catchError(() => of([]))),
+            pictures: this.http.get<Picture[]>(this.apiUrl + "/pictures").pipe(catchError(() => of([])))
+        }).pipe(
+            map(({ products, pictures }) => ({
+                ...section,
+                loaded: true,
+                cards: products.map(product => {
+                    const productPictures = pictures.filter(pic => pic.product_id === product.id);
+                    const selectedPicture: Picture = productPictures.length
+                        ? productPictures[0]
+                        : { product_id: product.id, url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png' };
+
+                    return {
+                        ...product,
+                        picture: [selectedPicture] // UVEK niz sa JEDNOM slikom
+                    };
+                })
+            })),
+            catchError(error => {
+                console.error(`Error populating cards for section`, error);
+                return of({ ...section, cards: [] });
+            })
+        );
+    }
+
+
 }
 
