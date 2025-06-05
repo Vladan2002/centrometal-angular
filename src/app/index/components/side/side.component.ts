@@ -9,7 +9,7 @@ import {AccordionService} from '../../../../services/accordion.service';
   styleUrl: './side.component.scss'
 })
 export class SideComponent implements OnInit {
-  public isActive = false;
+  public isActive = true;
   public accordion: CategoryNode[] = [];
   constructor(private accordionService: AccordionService) {}
 

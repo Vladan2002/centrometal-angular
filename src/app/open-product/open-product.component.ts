@@ -17,7 +17,7 @@ export class OpenProductComponent implements OnInit {
   public products: Product[] = [];
   public loader: boolean = true;
   public limit: number[] = [1, 2, 3, 4];
-  private id: number = 2;
+  private id: number = -1;
 
   constructor(
     private dataService: OpenProductService,
@@ -33,20 +33,25 @@ export class OpenProductComponent implements OnInit {
     this.productDescription= [];
     this.products= [];
     this.loader= true;
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 0);
   }
 
 
   ngOnInit() {
+
     this.route.params.subscribe(params => {
       this.id = +params['id'];
       this.resetData();
-      setTimeout(() => this.fetchProductData(), 1000);
+      setTimeout(() => this.fetchProductData(), 0);
     });
+
+
   }
 
 
   private fetchProductData(): void {
-    this.loader = true;
 
     this.dataService.getData(this.id).subscribe({
       next: (data) => {
@@ -60,11 +65,11 @@ export class OpenProductComponent implements OnInit {
         console.log('Product data:', this.productData);
         this.fetchProductDescription();
         this.fetchSimilarProducts();
+
       },
       error: (err) => {
         console.warn('Error while fetching product:', err);
         this.router.navigate(['/']);
-        this.loader = false;
       }
     });
   }
