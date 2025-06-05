@@ -11,6 +11,7 @@ import {AccordionService} from '../../../../services/accordion.service';
 export class SideComponent implements OnInit {
   public isActive = true;
   public accordion: CategoryNode[] = [];
+  public level: number = 0;
   constructor(private accordionService: AccordionService) {}
 
   public toggleMenu(): void {
