@@ -223,7 +223,7 @@
   &__trapezoid-right {
     border-bottom: 50px solid #00ADF0;
     border-left: 20px solid transparent;
-    border-right: 0px solid transparent;
+    border-right: 0 solid transparent;
     height: 0;
     width: 40px;
     transform: rotate(180deg);
@@ -231,7 +231,7 @@
 
   &__trapezoid-left {
     border-bottom: 50px solid #00ADF0;
-    border-left: 0px solid transparent;
+    border-left: 0 solid transparent;
     border-right: 20px solid transparent;
     height: 0;
     width: 40px;
