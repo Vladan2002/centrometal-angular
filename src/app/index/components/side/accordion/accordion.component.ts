@@ -8,10 +8,10 @@ import {CategoryNode} from './interfaces/accordion.interface';
 })
 export class AccordionComponent{
   @Input() public accordion!: CategoryNode;
-  @Input() public isActive = true;
+  @Input() public isActive:boolean = true;
   @Input() public level!: number;
 
-  public expanded = false;
+  public expanded:boolean = false;
 
   public toggle(): void {
     this.expanded = !this.expanded;
