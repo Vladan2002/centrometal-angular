@@ -16,7 +16,7 @@ export class AccordionComponent{
   public toggle(): void {
     this.expanded = !this.expanded;
   }
-  getBackgroundColor(level: number): string {
+   public getBackgroundColor(level: number): string {
     const val = 244 - Math.min(level * 15, 90);
     return `rgb(${val}, ${val}, ${val})`;
   }
