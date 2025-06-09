@@ -26,10 +26,12 @@
         </div>
         <div class="navbar__header__right__buy">
           <a class="navbar__header__right__link" href="#"><i class="fa-brands fa-facebook-f navbar__header__right__buy__icon"></i></a>
-          <button class="navbar__header__right__link navbar__header__right__buy__basket" (click)="toggleCart()" >MOJA KORPA</button>
-          <app-cart *ngIf="isCartVisible"></app-cart>
-          <p class="navbar__header__right__text">0.00$</p>
-          <a class="navbar__header__right__link" href="#" style="background-color:#0BA2D6;"><i class="fa-solid fa-cart-shopping navbar__header__right__icon"></i></a>
+          <a class="navbar__header__right__link navbar__header__right__buy__basket">MOJA KORPA</a>
+          <app-cart *ngIf="isCartVisible"   (closeCart)="onCloseCart()"
+                    (totalPriceChange)="updateTotalPrice($event)"
+          ></app-cart>
+          <p class="navbar__header__right__text">{{ totalPrice | number:'1.2-2' }} $</p>
+          <a class="navbar__header__right__link" (click)="toggleCart()" style="background-color:#0BA2D6;"><i class="fa-solid fa-cart-shopping navbar__header__right__icon"></i></a>
           <div class="navbar__burger-menu" (click)="toggleMenu()">
             <i class="fa-solid fa-bars navbar__burger-menu__icon"></i>
           </div>
