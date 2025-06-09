@@ -1,12 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CartComponent} from './cart.component';
 import {CartService} from '../../../services/cart.service';
-import {CommonModule} from '@angular/common';
+import {AsyncPipe, NgForOf, NgIf} from '@angular/common';
 
 @NgModule({
   declarations: [CartComponent],
   imports: [
-    CommonModule
+    AsyncPipe,
+    NgIf,
+    NgForOf
   ],
   providers: [CartService],
   exports: [CartComponent]

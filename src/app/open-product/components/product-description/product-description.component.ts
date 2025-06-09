@@ -13,27 +13,15 @@ import { CartService } from "../../../../services/cart.service"
 export class ProductDescriptionComponent implements OnInit {
   @Input() public productData!: Product;
   @Input() public productDescription!: ProductDescription[];
-  public quantity:number = 0;
   public description: string[]=[]
   ngOnInit() {
     this.description = this?.productDescription[0]?.product_description.split('|') || [];
   }
   constructor(private cartService: CartService) {}
 
- public addToCart() {
-    if(this.quantity>0) {
-      for (let i = 0; i < this.quantity; i++) {
-        this.cartService.addToCart({...this.productData});
-      }
-    }
-  }
-
-  public increase(){
-    this.quantity++
-  }
-  public decrease(){
-    if(this.quantity > 0){this.quantity--;}
-
+  addToCart() {
+    this.cartService.addToCart({ ...this.productData });
+    console.log(this.cartService.cartItems);
   }
 
 }
