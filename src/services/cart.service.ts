@@ -1,37 +1,50 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {Product} from '../app/index/components/main-content/products/interfaces/products.interface';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Product } from '../app/index/components/main-content/products/interfaces/products.interface';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
-  public cartItems: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
+  private cartItems: Product[] = [];
 
-  constructor() {
-    const storedCart = localStorage.getItem('cart');
-    if (storedCart) {
-      this.cartItems.next(JSON.parse(storedCart));
-    }
-  }
+  private cartSubject = new BehaviorSubject<Product[]>([]);
+  cart$ = this.cartSubject.asObservable();
 
-  getItems(): Observable<Product[]> {
-    return this.cartItems.asObservable();
-  }
+  private totalPriceSubject = new BehaviorSubject<number>(0);
+  totalPrice$ = this.totalPriceSubject.asObservable();
 
   addToCart(item: Product) {
-    const current = this.cartItems.value;
-    const updated = [...current, item];
-    this.cartItems.next(updated);
-    localStorage.setItem('cart', JSON.stringify(updated));
+    this.cartItems.push(item);
+    this.cartSubject.next([...this.cartItems]);
+    this.updateTotalPrice();
   }
 
-  removeFromCart(id: number) {
-    const updated = this.cartItems.value.filter(item => item.id !== id);
-    this.cartItems.next(updated);
-    localStorage.setItem('cart', JSON.stringify(updated));
+  removeFromCart(index: number) {
+    this.cartItems.splice(index, 1);
+    this.cartSubject.next([...this.cartItems]);
+    this.updateTotalPrice();
   }
 
   clearCart() {
-    this.cartItems.next([]);
-    localStorage.removeItem('cart');
+    this.cartItems = [];
+    this.cartSubject.next([]);
+    this.updateTotalPrice();
+  }
+
+  getCurrentCart() {
+    return [...this.cartItems];
+  }
+
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, product) => {
+      const priceAfterDiscount = product.discount && product.discount > 0
+        ? product.price * (1 - product.discount / 100)
+        : product.price;
+      return total + priceAfterDiscount;
+    }, 0);
+  }
+
+  private updateTotalPrice() {
+    const total = this.getTotalPrice();
+    this.totalPriceSubject.next(total);
   }
 }

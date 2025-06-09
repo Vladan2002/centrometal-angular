@@ -1,8 +1,41 @@
 <div class="cart">
-  <h3>🛒 Korpa</h3>
-  <button (click)="emptyCart()">Isprazni korpu</button>
-  <div *ngIf="(cartService.getItems() | async)?.length === 0">Korpa je prazna.</div>
-  <div *ngFor="let item of cartService.getItems() | async">
-    <p>{{ item.name }} - {{ item.price }} €</p>
-  </div>
+    <h3>🛒 Korpa</h3>
+
+    <button (click)="emptyCart()">Isprazni korpu</button>
+    <button (click)="close()">Zatvori korpu</button>
+
+    <div *ngIf="!cartItems.length">
+        <p>Korpa je prazna.</p>
+    </div>
+
+    <ng-container *ngIf="cartItems">
+        <div *ngFor="let product of cartItems; let i = index" class="cart__item">
+            <div class="cart__item__img-wrapper">
+                <img *ngIf="product.picture" [src]="product.picture[0].url" alt="" />
+                <div class="cart__item__badge" *ngIf="product.discount">{{ product.discount }}%</div>
+            </div>
+
+            <div class="cart__item__details">
+                <h4 class="cart__item__name">{{ product.name }}</h4>
+                <div class="cart__item__price">
+          <span *ngIf="product.discount" class="cart__item__price--old">
+            {{ product.price | number:'1.2-2' }} $
+          </span>
+                    <span class="cart__item__price--new">
+            {{
+                            (product.discount > 0
+                                ? (product.price * (1 - product.discount / 100))
+                                : product.price) | number:'1.2-2'
+                        }} $
+          </span>
+                </div>
+            </div>
+
+            <button class="cart__item__remove" (click)="removeFromCart(i)">×</button>
+        </div>
+
+        <div class="cart__total">
+            Ukupno: {{ totalPrice | number:'1.2-2' }} $
+        </div>
+    </ng-container>
 </div>
