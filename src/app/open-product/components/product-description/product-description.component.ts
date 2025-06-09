@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../../index/components/main-content/products/interfaces/products.interface"
 import {ProductDescription} from '../../interfaces/product-description.interface';
+import { CartService } from "../../../../services/cart.service"
+
 
 @Component({
   selector: 'app-product-description',
@@ -14,6 +16,12 @@ export class ProductDescriptionComponent implements OnInit {
   public description: string[]=[]
   ngOnInit() {
     this.description = this?.productDescription[0]?.product_description.split('|') || [];
+  }
+  constructor(private cartService: CartService) {}
+
+  addToCart() {
+    this.cartService.addToCart({ ...this.productData });
+    console.log(this.cartService.cartItems);
   }
 
 }

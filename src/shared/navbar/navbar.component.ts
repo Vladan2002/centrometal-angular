@@ -13,6 +13,12 @@ export class NavbarComponent implements OnInit {
   public navbarItems: Section[] | undefined;
   public isMenuActive: boolean = false;
 
+  isCartVisible = false;
+
+  toggleCart() {
+    this.isCartVisible = !this.isCartVisible;
+  }
+
   constructor(private navbarService: NavbarService) {}
 
   public ngOnInit(): void {

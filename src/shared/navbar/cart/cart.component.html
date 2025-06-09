@@ -1,0 +1,8 @@
+<div class="cart">
+  <h3>🛒 Korpa</h3>
+  <button (click)="emptyCart()">Isprazni korpu</button>
+  <div *ngIf="(cartService.getItems() | async)?.length === 0">Korpa je prazna.</div>
+  <div *ngFor="let item of cartService.getItems() | async">
+    <p>{{ item.name }} - {{ item.price }} €</p>
+  </div>
+</div>
