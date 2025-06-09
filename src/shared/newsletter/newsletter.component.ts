@@ -39,7 +39,7 @@ export class NewsletterComponent implements OnInit {
 
     const newSubscriber: Subscriber = this.newsletterForm.value;
     this.newsletterService.getByEmail(newSubscriber.email).subscribe(existing => {
-      if (existing.length) {
+      if (existing && existing.length) {
         this.errorMessage = 'Email već postoji.';
         this.successMessage = '';
       } else {
