@@ -14,8 +14,8 @@ export class CartComponent implements OnInit {
   public cartItems: CartItem[] = [];
   public totalPrice: number = 0;
 
-  @Output() public totalPriceChange = new EventEmitter<number>();
-  @Output() public closeCart = new EventEmitter<void>();
+  @Output() public totalPriceChange:EventEmitter<number> = new EventEmitter<number>();
+  @Output() public closeCart:EventEmitter<void> = new EventEmitter<void>();
 
   constructor(public cartService: CartService) {}
 

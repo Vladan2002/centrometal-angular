@@ -12,9 +12,10 @@ export class CartItemComponent {
   @Input() public item!: CartItem;
   @Input() public index!: number;
 
-  @Output() public increase = new EventEmitter<number>();
-  @Output() public decrease = new EventEmitter<number>();
-  @Output() public remove = new EventEmitter<number>();
+  @Output() public increase: EventEmitter<number> = new EventEmitter<number>();
+  @Output() public decrease: EventEmitter<number> = new EventEmitter<number>();
+  @Output() public remove: EventEmitter<number> = new EventEmitter<number>();
+
 
   public onIncrease() {
     this.increase.emit(this.index);
