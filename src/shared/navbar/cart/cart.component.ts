@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
-import { Product } from "../../../app/index/components/main-content/products/interfaces/products.interface";
 import { Subscription } from "rxjs";
+import {CartItem} from './interfaces/cart.interface';
 
 @Component({
   selector: 'app-cart',
@@ -11,35 +11,52 @@ import { Subscription } from "rxjs";
 })
 export class CartComponent implements OnInit {
   private subscription!: Subscription;
-  public cartItems: Product[] = [];
-  totalPrice: number = 0;
+  public cartItems: CartItem[] = [];
+  public totalPrice: number = 0;
 
-  @Output() totalPriceChange = new EventEmitter<number>();
-  @Output() closeCart = new EventEmitter<void>();
+  @Output() public totalPriceChange = new EventEmitter<number>();
+  @Output() public closeCart = new EventEmitter<void>();
 
   constructor(public cartService: CartService) {}
+
+
+
+
+  public increase(i: number) {
+    this.cartService.increaseQuantity(i);
+  }
+
+  public decrease(i: number) {
+    this.cartService.decreaseQuantity(i);
+  }
+
+
 
   public close() {
     this.closeCart.emit();
   }
 
-  calculateTotal() {
+  private calculateTotal() {
     this.totalPrice = this.cartService.getTotalPrice();
     this.totalPriceChange.emit(this.totalPrice);
   }
 
-  removeFromCart(index: number) {
+  public removeFromCart(index: number) {
     this.cartService.removeFromCart(index);
   }
 
   public emptyCart() {
     this.cartService.clearCart();
   }
-
-  ngOnInit() {
+  private subscribeToCart(): void {
     this.subscription = this.cartService.cart$.subscribe(items => {
       this.cartItems = items;
       this.calculateTotal();
     });
+
+  }
+
+  public ngOnInit() {
+    this.subscribeToCart()
   }
 }

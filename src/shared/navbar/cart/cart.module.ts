@@ -1,15 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CartComponent} from './cart.component';
 import {CartService} from '../../../services/cart.service';
-import {AsyncPipe, DecimalPipe, NgForOf, NgIf} from '@angular/common';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from "@angular/router";
+import {CartItemModule} from "./cart-item/cart-item.module";
 
 @NgModule({
   declarations: [CartComponent],
   imports: [
-    AsyncPipe,
-    NgIf,
-    NgForOf,
-    DecimalPipe
+    CommonModule,
+    RouterModule,
+    CartItemModule
   ],
   providers: [CartService],
   exports: [CartComponent]

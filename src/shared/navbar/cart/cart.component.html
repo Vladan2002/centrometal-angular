@@ -1,41 +1,28 @@
 <div class="cart">
-    <h3>🛒 Korpa</h3>
+    <h3 class="cart__title">🛒 Korpa</h3>
 
-    <button (click)="emptyCart()">Isprazni korpu</button>
-    <button (click)="close()">Zatvori korpu</button>
+    <div class="cart__navigation">
+    <button class="cart__button" (click)="emptyCart()">Isprazni korpu</button>
+    <button class="cart__button" (click)="close()">X</button>
+    </div>
 
     <div *ngIf="!cartItems.length">
         <p>Korpa je prazna.</p>
     </div>
 
+    <div class="cart__items-wrapper">
     <ng-container *ngIf="cartItems">
-        <div *ngFor="let product of cartItems; let i = index" class="cart__item">
-            <div class="cart__item__img-wrapper">
-                <img *ngIf="product.picture" [src]="product.picture[0].url" alt="" />
-                <div class="cart__item__badge" *ngIf="product.discount">{{ product.discount }}%</div>
-            </div>
-
-            <div class="cart__item__details">
-                <h4 class="cart__item__name">{{ product.name }}</h4>
-                <div class="cart__item__price">
-          <span *ngIf="product.discount" class="cart__item__price--old">
-            {{ product.price | number:'1.2-2' }} $
-          </span>
-                    <span class="cart__item__price--new">
-            {{
-                            (product.discount > 0
-                                ? (product.price * (1 - product.discount / 100))
-                                : product.price) | number:'1.2-2'
-                        }} $
-          </span>
-                </div>
-            </div>
-
-            <button class="cart__item__remove" (click)="removeFromCart(i)">×</button>
-        </div>
-
+        <app-cart-item
+                *ngFor="let item of cartItems; let i = index"
+                [item]="item"
+                [index]="i"
+                (increase)="increase($event)"
+                (decrease)="decrease($event)"
+                (remove)="removeFromCart($event)">
+        </app-cart-item>
         <div class="cart__total">
             Ukupno: {{ totalPrice | number:'1.2-2' }} $
         </div>
     </ng-container>
+        </div>
 </div>

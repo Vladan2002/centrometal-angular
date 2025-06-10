@@ -3,7 +3,7 @@
   [ngClass]="{ 'container__side__menu__button--deactivate-button': !isActive }"
   (click)="toggle()"
   >
-  <p class="container__side__menu__text">{{ accordion?.name }}</p>
+  <p class="container__side__menu__text">{{ accordion.name }}</p>
   <p class="container__side__menu__text" *ngIf="accordion.children?.length">
    +
   </p>

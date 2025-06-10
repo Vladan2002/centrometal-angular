@@ -1,50 +1,64 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from '../app/index/components/main-content/products/interfaces/products.interface';
+import { CartItem} from '../shared/navbar/cart/interfaces/cart.interface';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
-  private cartItems: Product[] = [];
+  private cartItems: CartItem[] = [];
 
-  private cartSubject = new BehaviorSubject<Product[]>([]);
-  cart$ = this.cartSubject.asObservable();
+  private cartSubject = new BehaviorSubject<CartItem[]>([]);
+  public cart$ = this.cartSubject.asObservable();
 
   private totalPriceSubject = new BehaviorSubject<number>(0);
-  totalPrice$ = this.totalPriceSubject.asObservable();
+  public totalPrice$ = this.totalPriceSubject.asObservable();
 
-  addToCart(item: Product) {
-    this.cartItems.push(item);
-    this.cartSubject.next([...this.cartItems]);
-    this.updateTotalPrice();
+  public addToCart(product: Product) {
+    const existingItem = this.cartItems.find(item => item.product.id === product.id);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      this.cartItems.push({ product, quantity: 1 });
+    }
+    this.updateCart();
   }
 
-  removeFromCart(index: number) {
+  public removeFromCart(index: number) {
     this.cartItems.splice(index, 1);
-    this.cartSubject.next([...this.cartItems]);
-    this.updateTotalPrice();
+    this.updateCart();
   }
 
-  clearCart() {
+  public clearCart() {
     this.cartItems = [];
-    this.cartSubject.next([]);
-    this.updateTotalPrice();
+    this.updateCart();
   }
 
-  getCurrentCart() {
-    return [...this.cartItems];
+  public increaseQuantity(index: number) {
+    this.cartItems[index].quantity += 1;
+    this.updateCart();
   }
 
-  getTotalPrice(): number {
-    return this.cartItems.reduce((total, product) => {
-      const priceAfterDiscount = product.discount && product.discount > 0
-        ? product.price * (1 - product.discount / 100)
-        : product.price;
-      return total + priceAfterDiscount;
+  public decreaseQuantity(index: number) {
+    if (this.cartItems[index].quantity > 1) {
+      this.cartItems[index].quantity -= 1;
+    } else {
+      this.removeFromCart(index);
+      return;
+    }
+    this.updateCart();
+  }
+
+  public getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => {
+      const price = item.product.discount
+        ? item.product.price * (1 - item.product.discount / 100)
+        : item.product.price;
+      return total + price * item.quantity;
     }, 0);
   }
 
-  private updateTotalPrice() {
-    const total = this.getTotalPrice();
-    this.totalPriceSubject.next(total);
+  private updateCart() {
+    this.cartSubject.next([...this.cartItems]);
+    this.totalPriceSubject.next(this.getTotalPrice());
   }
 }
