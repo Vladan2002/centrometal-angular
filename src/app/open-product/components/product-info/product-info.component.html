@@ -45,7 +45,7 @@
 
   <div class="main__table__content main__table--active" *ngIf="activeTab === 'uputstvo'">
     <button class="main__table__content__button">
-      <a class="main__table__content__link" href="../../../assets/upustvo.pdf" target="_blank">Uputstvo</a>
+      <a class="main__table__content__link" href="./assets/upustvo.pdf" target="_blank">Uputstvo</a>
     </button>
   </div>
 
@@ -65,9 +65,12 @@
 
   <div class="main__table__content main__table--active" *ngIf="activeTab === 'email'">
     <div class="main__table__content__container">
-      <input class="main__table__content__input" type="text" placeholder="E-mail adresa" />
-      <input class="main__table__content__input" type="text" placeholder="Naslov" />
-      <textarea class="main__table__content__textarea" placeholder="Unesi tekst"></textarea>
+      <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+      <input class="main__table__content__input" formControlName="email" type="text" placeholder="E-mail adresa" />
+      <input class="main__table__content__input" formControlName="title" type="text" placeholder="Naslov" />
+      <textarea class="main__table__content__textarea" formControlName="content" placeholder="Unesi tekst"></textarea>
+        <button type="submit">Posalji</button>
+      </form>
     </div>
   </div>
 </div>
