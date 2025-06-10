@@ -13,11 +13,11 @@ import {CartService} from '../../services/cart.service';
 export class NavbarComponent implements OnInit {
   public navbarItems: Section[] | undefined;
   public isMenuActive: boolean = false;
-  totalPrice: number = 0;
+  public totalPrice: number = 0;
 
-  isCartVisible = false;
+  public isCartVisible = false;
 
-  toggleCart() {
+  public toggleCart() {
     this.isCartVisible = !this.isCartVisible;
   }
 
@@ -40,7 +40,7 @@ export class NavbarComponent implements OnInit {
     this.isMenuActive = !this.isMenuActive;
   }
 
-  hideCart(): void {
+  public hideCart(): void {
     this.isCartVisible = false;
   }
 }
