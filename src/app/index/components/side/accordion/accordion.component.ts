@@ -8,11 +8,18 @@ import {CategoryNode} from './interfaces/accordion.interface';
 })
 export class AccordionComponent{
   @Input() public accordion!: CategoryNode;
-  @Input() public isActive = true;
+  @Input() public isActive:boolean = true;
+  @Input() public level!: number;
 
-  public expanded = false;
+  public expanded:boolean = false;
 
   public toggle(): void {
     this.expanded = !this.expanded;
   }
+   public getBackgroundColor(level: number): string {
+    const val = 244 - Math.min(level * 15, 90);
+    return `rgb(${val}, ${val}, ${val})`;
+  }
+
+
 }
