@@ -1,22 +1,24 @@
 <button
   class="container__side__menu__button"
   [ngClass]="{ 'container__side__menu__button--deactivate-button': !isActive }"
-  (click)="toggle()"
   [style.background-color]="getBackgroundColor(level)"
+  (click)="toggle()"
 >
   <p class="container__side__menu__text"
-     [style.margin-left.px]="level * 20"
-  >{{ accordion?.name }}</p>
+     [style.margin-left.px]="level * 20">
+    {{ accordion?.name }}
+  </p>
   <p class="container__side__menu__text" *ngIf="accordion.children?.length">
-   +
+    +
   </p>
 </button>
+
 <ng-container *ngIf="accordion?.children?.length && expanded">
   <ng-container *ngFor="let child of accordion?.children">
     <app-accordion
       [accordion]="child"
       [isActive]="isActive"
-      [level]="level+1"
+      [level]="level + 1"
     ></app-accordion>
   </ng-container>
 </ng-container>

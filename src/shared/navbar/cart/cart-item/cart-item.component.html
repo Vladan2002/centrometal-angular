@@ -1,0 +1,40 @@
+<ng-container *ngIf="item?.product as product">
+  <div class="cart__item" [routerLink]="['/product', product.id]">
+    <div class="cart__item__wrapper" >
+      <img *ngIf="product.picture" [src]="product.picture[0].url" alt="" class="cart__item__wrapper__img">
+      <div *ngIf="product.discount" class="cart__item__badge">{{ product.discount }}%</div>
+    </div>
+
+    <div class="cart__item__details">
+      <h4 class="cart__item__name">{{ product.name }}</h4>
+
+      <div class="cart__item__price">
+        <span *ngIf="product.discount" class="cart__item__price--old">
+          {{ product.price | number:'1.2-2' }} $
+        </span>
+        <span class="cart__item__price--new">
+          {{
+            (product.discount
+              ? product.price * (1 - product.discount / 100)
+              : product.price) | number:'1.2-2'
+          }} $
+        </span>
+      </div>
+
+      <div class="cart__item__quantity">
+        <button class="cart__button cart__button--quantity" (click)="onDecrease()">−</button>
+        <span class="cart__item__quantity__text">{{ item.quantity }}</span>
+        <button class="cart__button cart__button--quantity" (click)="onIncrease()">+</button>
+        <span class="cart__item__price--new">
+          {{
+            ((product.discount
+              ? product.price * (1 - product.discount / 100)
+              : product.price) * item.quantity) | number:'1.2-2'
+          }} $
+        </span>
+      </div>
+    </div>
+
+    <button class="cart__item__remove" (click)="onRemove()">×</button>
+  </div>
+</ng-container>

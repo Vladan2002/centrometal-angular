@@ -1,0 +1,28 @@
+<div class="cart">
+    <h3 class="cart__title">🛒 Korpa</h3>
+
+    <div class="cart__navigation">
+    <button class="cart__button" (click)="emptyCart()">Isprazni korpu</button>
+    <button class="cart__button" (click)="close()">X</button>
+    </div>
+
+    <div *ngIf="!cartItems.length">
+        <p>Korpa je prazna.</p>
+    </div>
+
+    <div class="cart__items-wrapper">
+    <ng-container *ngIf="cartItems">
+        <app-cart-item
+                *ngFor="let item of cartItems; let i = index"
+                [item]="item"
+                [index]="i"
+                (increase)="increase($event)"
+                (decrease)="decrease($event)"
+                (remove)="removeFromCart($event)">
+        </app-cart-item>
+        <div class="cart__total">
+            Ukupno: {{ totalPrice | number:'1.2-2' }} $
+        </div>
+    </ng-container>
+        </div>
+</div>

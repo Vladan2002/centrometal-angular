@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { NavbarService } from '../../services/navbar.service';
 import {Section} from './interfaces/navbar.interface';
+import {CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +13,20 @@ import {Section} from './interfaces/navbar.interface';
 export class NavbarComponent implements OnInit {
   public navbarItems: Section[] | undefined;
   public isMenuActive: boolean = false;
+  public totalPrice: number = 0;
 
-  constructor(private navbarService: NavbarService) {}
+  public isCartVisible = false;
+
+  public toggleCart() {
+    this.isCartVisible = !this.isCartVisible;
+  }
+
+  constructor(private navbarService: NavbarService, private cartService: CartService) {}
 
   public ngOnInit(): void {
+    this.cartService.totalPrice$.subscribe(price => {
+      this.totalPrice = price;
+    });
     this.fetchData()
   }
   public fetchData(): void {
@@ -27,5 +38,9 @@ export class NavbarComponent implements OnInit {
 
   public toggleMenu(): void {
     this.isMenuActive = !this.isMenuActive;
+  }
+
+  public hideCart(): void {
+    this.isCartVisible = false;
   }
 }
