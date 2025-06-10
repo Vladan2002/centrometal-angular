@@ -7,6 +7,7 @@ const sections=require('./db/sections.json');
 const products=require('./db/products.json');
 const pictures=require('./db/pictures.json');
 const description=require('./db/description.json');
+const questions=require('./db/questions.json');
 
 module.exports = () => ({
   navbar: navbar,
@@ -18,4 +19,5 @@ module.exports = () => ({
   products:products,
   pictures:pictures,
   description:description,
+  questions:questions,
 });
