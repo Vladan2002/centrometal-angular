@@ -14,7 +14,7 @@ export class ProductDescriptionComponent implements OnInit {
   @Input() public productData!: Product;
   @Input() public productDescription!: ProductDescription[];
 
-  public quantity: number = 0;
+  public quantity: number = 1;
   public description: string[] = [];
 
   constructor(private cartService: CartService) {}

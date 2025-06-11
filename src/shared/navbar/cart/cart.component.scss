@@ -12,6 +12,24 @@
   border-radius: 8px;
 }
 
+@media (max-width: 1230px){
+  :host {
+    position: absolute;
+    top: 44px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 305px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    animation: slideDown 0.3s ease-out;
+    border-radius: 8px;
+  }
+
+}
+
+
 @keyframes slideDown {
   from {
     opacity: 0;

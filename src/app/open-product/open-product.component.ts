@@ -33,7 +33,8 @@ export class OpenProductComponent implements OnInit {
     this.productDescription= [];
     this.products= [];
     this.loader= true;
-    window.scrollTo({top:0,behavior: 'smooth'});
+
+    setTimeout(()=>{window.scrollTo({top:0,behavior: 'smooth'});},10)
   }
 
 
