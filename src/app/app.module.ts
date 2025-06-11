@@ -6,6 +6,7 @@ import { NavbarModule } from '../shared/navbar/navbar.module';
 import { NavbarService } from '../services/navbar.service';
 import {FooterModule} from '../shared/footer/footer.module';
 import { AppRoutingModule } from './app-routing.module';
+import { BrandSliderModule } from './brand-slider/brand-slider.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
     NavbarModule,
     HttpClientModule,
     FooterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrandSliderModule
+
   ],
   providers: [NavbarService],
   bootstrap: [AppComponent]
